@@ -1,0 +1,20 @@
+<% if notice %>
+  <div class="p-4">
+    <div class="container">
+      <div class="px-4">
+
+        <% if notice %>
+          <div class="shadow rounded bg-white d-flex flex-row w-100 align-items-center my-3 overflow-hidden">
+            <div class="bg-success text-white text-big-2 p-4">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="px-4 py-3">
+              <%= notice %>
+            </div>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+<% end %>
