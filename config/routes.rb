@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  get "/", to: "home#index"
+  root to: "home#language_redirection"
+
+  scope "/:locale" do
+    devise_for :users
+
+    get "/", to: "home#index"
+  end
 end

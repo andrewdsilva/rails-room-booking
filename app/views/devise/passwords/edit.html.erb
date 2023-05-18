@@ -1,0 +1,38 @@
+<div class="my-5 py-5">
+  <div class="container-fluid position-relative" style="z-index: 10">
+    <div class="row">
+      <div class="col-lg-6 d-none d-lg-flex align-items-center justify-content-center">
+        <div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 col-sm-12 d-flex align-items-center justify-content-center">
+        <div style="width: 400px;" class="mw-100">
+          <h1 class="fw-bold"><%= t('auth.change_your_password') %></h1>
+
+          <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+            <%= f.hidden_field :reset_password_token %>
+
+            <div class="field mb-3">
+              <%= f.label :password, t('.new_password'), class: "form-label" %><br />
+              <% if @minimum_password_length %>
+                <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em><br />
+              <% end %>
+              <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class: "form-control" %>
+            </div>
+
+            <div class="input-group-lg field mb-3">
+              <%= f.label :password_confirmation, t('.confirm_new_password'), class: "form-label" %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control"%>
+            </div>
+
+            <div class="actions mb-3">
+              <%= f.submit t('.change_my_password'), class: "btn btn-lg bg-secondary text-light w-100 mt-4" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

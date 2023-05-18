@@ -1,0 +1,37 @@
+// Base
+
+body {
+  font-family: 'Roboto', sans-serif;
+  padding-top: 90px;
+}
+
+a, a:hover {
+  text-decoration: none;
+  color: $primary;
+}
+
+// Text
+
+.text-normal {
+  font-size: 1rem;
+}
+
+.text-big {
+  font-size: 1.5rem;
+}
+
+.text-big-2 {
+  font-size: 2.25rem;
+}
+
+.text-biggest {
+  font-size: 4rem;
+}
+
+@media (max-width: map-get($grid-breakpoints, "md")) {
+  .text-biggest {
+    font-size: 2.5rem;
+  }
+}
+
+

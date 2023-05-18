@@ -82,3 +82,6 @@ gem "money", "~> 6.16"
 
 gem "importmap-rails", "~> 1.1"
 gem 'bootstrap', '~> 5.1.3'
+gem 'devise'
+
+gem "pundit", "~> 2.3"

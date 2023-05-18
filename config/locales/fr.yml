@@ -1,3 +1,32 @@
 fr:
   application:
     name: "Rails Room Booking"
+
+  nav:
+    logout: Se déconnecter
+    login: Connexion
+    register: Inscription
+
+  auth:
+    register: Inscription
+    logout: Déconnexion
+    login: Connexion
+    connected_as: Connecté en tant que
+    sign_in: Se connecter
+    sign_in_description: Connectez-vous à votre compte.
+    sign_in_button: Connexion
+    sign_up: Inscription
+    sign_up_description: Créez un compte.
+    sign_up_button: Valider
+    forget: Mot de passe oublié ?
+    forgot_your_password: Mot de passe oublié ?
+    forgot_your_password_button: Réinitialiser mon mot de passe
+    change_your_password: Modifier mon mot de passe
+
+  footer:
+    account: Mon compte
+
+  language:
+    current: Français
+    fr: Français
+    en: Anglais

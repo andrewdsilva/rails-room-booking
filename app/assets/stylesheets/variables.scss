@@ -1,0 +1,30 @@
+// Colors
+
+$red:       #cc0000;
+$green:     #48cb4b;
+
+$white:     #fff;
+$light:     #fafafa;
+$dark:      #333333;
+$black:     #1a1a1a;
+
+
+$primary:   $red;
+$secondary: $black;
+$danger:    $red;
+$success:   $green;
+
+// Buttons
+
+$btn-padding-y-lg: 1rem;
+$btn-padding-x-lg: 1rem;
+$btn-border-width: 0;
+$btn-border-radius: 0.5rem;
+
+// Form
+
+$input-border-width: 1px;
+$input-border-radius-sm: 0.5rem;
+$input-border-radius-lg: 0.5rem;
+$input-focus-bg: $white;
+$input-disabled-bg: $white;

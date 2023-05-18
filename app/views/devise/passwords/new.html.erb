@@ -1,0 +1,29 @@
+<div class="my-5 py-5">
+  <div class="container-fluid position-relative" style="z-index: 10">
+    <div class="row">
+      <div class="col-lg-6 d-none d-lg-flex align-items-center justify-content-center">
+        <div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 col-sm-12 d-flex align-items-center justify-content-center">
+        <div style="width: 400px;" class="mw-100">
+          <h1 class="fw-bold"><%= t('auth.forgot_your_password') %></h1>
+
+          <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+
+            <div class="input-group-lg field mb-3">
+              <%= f.label :email, class: "form-label" %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+            </div>
+
+            <div class="mb-4">
+              <%= f.submit t('auth.forgot_your_password_button'), class: "btn btn-lg bg-secondary text-light w-100 mt-4" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

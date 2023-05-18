@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="py-5 my-5">
+    <div class="row">
+      <div class="col-lg-7 d-none d-lg-flex align-items-center justify-content-center">
+        <div>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-5 d-flex align-items-center justify-content-end">
+        <div class="w-100">
+          <h1 class="fw-bold"><%= t('auth.sign_up') %></h1>
+
+          <p class="mb-4 text-muted"><%= t('auth.sign_up_description') %></p>
+
+          <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+            <%= devise_error_messages! %>
+
+            <div class="input-group-lg field mb-3">
+              <%= f.label :email, autofocus: true, class: "form-label" %><br />
+              <%= f.email_field :email, class: "form-control" %>
+            </div>
+
+            <div class="input-group-lg field mb-3">
+              <%= f.label :password, class: "form-label" %><br />
+              <%= f.password_field :password, class: "form-control" %>
+            </div>
+
+            <div class="input-group-lg field mb-3">
+              <%= f.label :password_confirmation, class: "form-label" %><br />
+              <%= f.password_field :password_confirmation, class: "form-control" %>
+            </div>
+
+            <div class="mb-4">
+              <div><%= f.submit t('auth.sign_up_button'), class: "btn btn-lg bg-secondary text-light w-100 mt-4" %></div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
