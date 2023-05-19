@@ -1,9 +1,11 @@
-Rails.application.routes.draw do
-  root to: "home#language_redirection"
+# frozen_string_literal: true
 
-  scope "/:locale" do
+Rails.application.routes.draw do
+  root to: 'home#language_redirection'
+
+  scope '/:locale' do
     devise_for :users
 
-    get "/", to: "home#index"
+    get '/', to: 'home#index'
   end
 end

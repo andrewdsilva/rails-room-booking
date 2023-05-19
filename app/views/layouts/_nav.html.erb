@@ -17,7 +17,7 @@
               <img src="<%= image_path "avatar.png" %>" alt="" width="32" height="32" class="rounded-circle me-2">
             </a>
             <ul class="dropdown-menu text-small">
-              <li><%= link_to I18n.t('nav.logout'), destroy_user_session_path(locale: @page_lang), :class => 'dropdown-item' %></li>
+              <li><%= button_to I18n.t('nav.logout'), destroy_user_session_path(locale: @page_lang), method: :delete, class: 'dropdown-item' %></li>
             </ul>
           </li>
 
@@ -25,10 +25,10 @@
 
           <ul class="nav mb-2 justify-content-md-center mb-md-0 ms-lg-auto me-lg-auto">
             <li>
-              <%= link_to I18n.t('nav.login'), new_user_session_path(locale: @page_lang), :class => 'nav-link px-3 link-dark' %>
+              <%= link_to I18n.t('nav.login'), new_user_session_path(locale: @page_lang), class: 'nav-link px-3 link-dark' %>
             </li>
             <li class="ms-3">
-              <%= link_to I18n.t('nav.register'), new_user_registration_path(locale: @page_lang), :class => 'btn btn-primary nav-link px-3 link-light' %>
+              <%= link_to I18n.t('nav.register'), new_user_registration_path(locale: @page_lang), class: 'btn btn-primary nav-link px-3 link-light' %>
             </li>
           </ul>
 

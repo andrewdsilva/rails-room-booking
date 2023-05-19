@@ -23,7 +23,7 @@ module LocaleConcern
   end
 
   def set_language_path
-    if request.path.match(/\/(fr|en)$/)
+    if request.path.match(%r{/(fr|en)$})
       @fr_path = "/fr/"
       @en_path = "/en/"
     else
@@ -31,5 +31,4 @@ module LocaleConcern
       @en_path = request.path.sub("/#{params[:locale]}/", "/en/")
     end
   end
-
 end

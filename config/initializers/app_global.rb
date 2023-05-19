@@ -1,1 +1,3 @@
-DOMAIN_NAME="https://rails-room-booking.com".freeze
+# frozen_string_literal: true
+
+DOMAIN_NAME = 'https://rails-room-booking.com'

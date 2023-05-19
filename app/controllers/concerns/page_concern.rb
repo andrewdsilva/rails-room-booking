@@ -7,17 +7,17 @@ module PageConcern
 
   private
 
-  def get_page_title
+  def page_title
     I18n.t("#{controller_name}.#{action_name}_title")
   end
 
-  def get_page_description
+  def page_description
     I18n.t("#{controller_name}.#{action_name}_description")
   end
 
   def set_page_variables
-    @page_title ||= get_page_title
-    @page_description ||= get_page_description
+    @page_title ||= page_title
+    @page_description ||= page_description
     @page_url = "#{DOMAIN_NAME}#{request.path}"
     @page_lang = locale
   end

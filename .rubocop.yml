@@ -1,0 +1,62 @@
+AllCops:
+  Exclude:
+    - '**/bin/**/*'
+    - '**/test/**/*'
+    - '**/db/**/*'
+    - '**/config/**/*'
+Security/YAMLLoad:
+  Enabled: false
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+Metrics/AbcSize:
+  Max: 26
+Metrics/CyclomaticComplexity:
+  Max: 12
+Metrics/PerceivedComplexity:
+  Max: 12
+Layout/LineLength:
+  Max: 160
+Layout/FirstHashElementIndentation:
+  Enabled: false
+Layout/ArgumentAlignment:
+  Enabled: false
+Layout/HashAlignment:
+  Enabled: false
+Metrics/MethodLength:
+  Max: 20
+Metrics/ClassLength:
+  Max: 300
+Metrics/BlockLength:
+  Max: 2000
+Metrics/ModuleLength:
+  Max: 300
+Style/Documentation:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/OptionalBooleanParameter:
+  Enabled: false
+Style/MethodDefParentheses:
+  Enabled: true
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+Style/RescueStandardError:
+  EnforcedStyle: implicit
+Naming/VariableNumber:
+  CheckSymbols: false
+Style/VariableNumber:
+  Enabled: false
+Style/HashSyntax:
+  EnforcedShorthandSyntax: never
+Gemspec/RequiredRubyVersion:
+  Enabled: false
+Style/WordArray:
+  Enabled: false
+Style/SymbolArray:
+  Enabled: false
+Lint/Debugger:
+  Enabled: false
+Layout/MultilineMethodCallIndentation:
+  Enabled: false
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
