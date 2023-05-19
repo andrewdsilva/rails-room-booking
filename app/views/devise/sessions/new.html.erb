@@ -12,7 +12,9 @@
 
           <p class="mb-4 text-muted"><%= t('auth.sign_in_description') %></p>
 
-          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+
             <div class="input-group-lg field mb-3">
               <%= f.label :email, class: "form-label" %><br />
               <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
@@ -39,7 +41,7 @@
             <% end %>
 
             <div class="mb-4">
-              <%= f.submit t('auth.sign_in_button'), class: "btn btn-lg bg-secondary text-light w-100 mt-4" %>
+              <%= f.submit t('auth.sign_in_button'), class: "btn btn-lg bg-primary text-light w-100 mt-4" %>
             </div>
           <% end %>
         </div>

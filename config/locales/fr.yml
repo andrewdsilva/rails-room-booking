@@ -30,3 +30,23 @@ fr:
     current: Français
     fr: Français
     en: Anglais
+
+  activerecord:
+    models:
+      user: "Utilisateur"
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              too_short: trop court
+            password_confirmation:
+              confirmation: ''
+            email:
+              blank: est manquante
+    attributes:
+      user:
+        email: "Votre adresse e-mail"
+        password: "Mot de passe"
+        password_confirmation: "Confirmez le mot de passe"
+        remember_me: "Rester connecté"

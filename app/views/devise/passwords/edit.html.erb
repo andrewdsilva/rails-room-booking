@@ -1,13 +1,13 @@
-<div class="my-5 py-5">
-  <div class="container-fluid position-relative" style="z-index: 10">
+<div class="container">
+  <div class="py-5 my-5">
     <div class="row">
-      <div class="col-lg-6 d-none d-lg-flex align-items-center justify-content-center">
+      <div class="col-lg-7 d-none d-lg-flex align-items-center justify-content-center">
         <div>
         </div>
       </div>
 
-      <div class="col-lg-6 col-sm-12 d-flex align-items-center justify-content-center">
-        <div style="width: 400px;" class="mw-100">
+      <div class="col-12 col-lg-5 d-flex align-items-center justify-content-end">
+        <div class="w-100">
           <h1 class="fw-bold"><%= t('auth.change_your_password') %></h1>
 
           <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
@@ -28,7 +28,7 @@
             </div>
 
             <div class="actions mb-3">
-              <%= f.submit t('.change_my_password'), class: "btn btn-lg bg-secondary text-light w-100 mt-4" %>
+              <%= f.submit t('.change_my_password'), class: "btn btn-lg bg-primary text-light w-100 mt-4" %>
             </div>
           <% end %>
         </div>
