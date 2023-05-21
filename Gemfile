@@ -58,6 +58,7 @@ group :development, :test do
   gem "debug", platforms: %i[mri mingw x64_mingw]
 
   gem "factory_bot_rails"
+
   gem "faker"
   gem "rspec-rails"
 end
@@ -87,3 +88,4 @@ gem "devise"
 gem "importmap-rails", "~> 1.1"
 
 gem "pundit", "~> 2.3"
+gem "slug"

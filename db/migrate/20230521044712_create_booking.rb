@@ -5,8 +5,8 @@ class CreateBooking < ActiveRecord::Migration[7.0]
       t.date :end_date
 
       t.integer :num_guests
-      t.integer :room_id
-      t.integer :user_id
+      t.references :room
+      t.references :user
 
       t.timestamps
     end

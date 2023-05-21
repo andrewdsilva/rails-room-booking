@@ -231,6 +231,10 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    slug (4.1.1)
+      activerecord (> 3.0.0)
+      activesupport (> 3.0.0)
+      rake
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -290,6 +294,7 @@ DEPENDENCIES
   rails (~> 7.0.4)
   rspec-rails
   selenium-webdriver
+  slug
   sprockets-rails
   sqlite3 (~> 1.4)
   stimulus-rails

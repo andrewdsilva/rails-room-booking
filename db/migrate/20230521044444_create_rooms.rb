@@ -4,7 +4,7 @@ class CreateRooms < ActiveRecord::Migration[7.0]
       t.string :slug
       t.string :title
       t.text :description
-      t.string :room_type
+      t.integer :room_type
 
       t.integer :num_guests
 
@@ -12,7 +12,7 @@ class CreateRooms < ActiveRecord::Migration[7.0]
       t.integer :num_beds
       t.integer :num_baths
 
-      t.integer :price
+      t.integer :day_price
 
       t.boolean :self_check_in, default: true
       t.boolean :parking, default: true
@@ -32,6 +32,7 @@ class CreateRooms < ActiveRecord::Migration[7.0]
       t.float :long
       t.text :location_description
 
+      t.references :user
       t.timestamps
     end
   end
