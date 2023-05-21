@@ -44,6 +44,12 @@ fr:
               confirmation: ''
             email:
               blank: est manquante
+        booking:
+          attributes:
+            start_date:
+              blank: "ne peut pas être vide"
+            end_date:
+              blank: "ne peut pas être vide"
     attributes:
       user:
         email: "Votre adresse e-mail"

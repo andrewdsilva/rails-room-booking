@@ -12,21 +12,47 @@ en:
     logout: Log out
     login: Log in
     connected_as: Connected as
-    sign_in: Sign in
+    sign_in: Sign In
     sign_in_description: Log in to your account.
-    sign_in_button: Log in
-    sign_up: Register
+    sign_in_button: Log In
+    sign_up: Sign Up
     sign_up_description: Create an account.
-    sign_up_button: Register
-    forget: Forgot password?
-    forgot_your_password: Forgot password?
-    forgot_your_password_button: Reset my password
-    change_your_password: Change my password
+    sign_up_button: Sign Up
+    forget: Forgot Password?
+    forgot_your_password: Forgot Password?
+    forgot_your_password_button: Reset My Password
+    change_your_password: Change My Password
 
   footer:
-    account: My account
+    account: My Account
 
   language:
     current: English
     fr: French
     en: English
+
+  activerecord:
+    models:
+      user: "User"
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              too_short: is too short
+            password_confirmation:
+              confirmation: ''
+            email:
+              blank: is missing
+        booking:
+          attributes:
+            start_date:
+              blank: "can't be blank"
+            end_date:
+              blank: "can't be blank"
+    attributes:
+      user:
+        email: "Your email address"
+        password: "Password"
+        password_confirmation: "Confirm password"
+        remember_me: "Remember me"
