@@ -9,31 +9,31 @@ class ApplicationPolicy
   end
 
   def index?
-    false
+    true
   end
 
   def show?
-    false
+    true
   end
 
   def create?
-    false
+    @user.present?
   end
 
   def new?
-    create?
+    @user.present?
   end
 
   def update?
-    false
+    @user.present?
   end
 
   def edit?
-    update?
+    @user.present?
   end
 
   def destroy?
-    false
+    @user.present?
   end
 
   class Scope

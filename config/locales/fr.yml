@@ -56,3 +56,43 @@ fr:
         password: "Mot de passe"
         password_confirmation: "Confirmez le mot de passe"
         remember_me: "Rester connecté"
+      room:
+        slug: "Slug"
+        title: "Titre"
+        description: "Description"
+        room_type: "Type de chambre"
+        num_guests: "Nombre d'invités"
+        num_rooms: "Nombre de chambres"
+        num_beds: "Nombre de lits"
+        num_baths: "Nombre de salles de bain"
+        day_price: "Prix HT par jour (€)"
+        self_check_in: "Enregistrement automatique"
+        parking: "Parking"
+        kitchen: "Cuisine"
+        washer: "Lave-linge"
+        dryer: "Sèche-linge"
+        dishwasher: "Lave-vaisselle"
+        wifi: "Wifi"
+        tv: "Télévision"
+        bathroom_essentials: "Articles de toilette"
+        bedroom_comforts: "Conforts de la chambre"
+        coffee_maker: "Machine à café"
+        hair_dryer: "Sèche-cheveux"
+        location: "Adresse"
+        location_description: "Description de l'emplacement"
+        lat: "Latitude"
+        long: "Longitude"
+
+  rooms:
+    title: "Logements"
+    new: "Ajouter un logement"
+    empty: "Aucun logement disponible."
+    new_form: Ajouter un logement
+    edit_form: Modifier un logement
+    list: Retour à la liste
+    create: Valider
+    form_location: 'Emplacement du logement'
+    form_options: 'Ce que propose ce logement'
+    room_types:
+      house: "Maison"
+      apartment: "Appartement"

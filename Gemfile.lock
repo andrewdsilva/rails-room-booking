@@ -128,6 +128,18 @@ GEM
       activesupport (>= 5.0.0)
     jsbundling-rails (1.1.1)
       railties (>= 6.0.0)
+    kaminari (1.2.2)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.2.2)
+      kaminari-activerecord (= 1.2.2)
+      kaminari-core (= 1.2.2)
+    kaminari-actionview (1.2.2)
+      actionview
+      kaminari-core (= 1.2.2)
+    kaminari-activerecord (1.2.2)
+      activerecord
+      kaminari-core (= 1.2.2)
+    kaminari-core (1.2.2)
     loofah (2.20.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -288,6 +300,7 @@ DEPENDENCIES
   importmap-rails (~> 1.1)
   jbuilder
   jsbundling-rails
+  kaminari (= 1.2.2)
   money (~> 6.16)
   puma (~> 5.0)
   pundit (~> 2.3)

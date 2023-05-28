@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   scope '/:locale' do
     devise_for :users
 
-    get '/', to: 'home#index'
+    get '/', to: redirect("/%{locale}/rooms")
+
+    resources :rooms
   end
 end

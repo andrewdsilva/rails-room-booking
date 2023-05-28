@@ -1,0 +1,201 @@
+<div class="container py-5">
+  <div class="d-flex align-items-center justify-content-between mb-5">
+    <h1 class="mb-0 fw-bold"><%= t('rooms.' + (@object.new_record? ? 'new' : 'edit') + '_form') %></h1>
+
+    <div><%= link_to I18n.t('rooms.list'), rooms_path, :class => 'btn bg-primary text-white' %></div>
+  </div>
+
+  <div>
+    <%= form_with(model: @object, url: rooms_path, method: :post) do |form| %>
+      <% if @object.errors.any? %>
+        <div class="alert alert-danger">
+          <% @object.errors.full_messages.each do |message|%>
+            <div><%= message %></div>
+          <%end%>
+        </div>
+      <%end%>
+
+      <%= form.hidden_field :user_id %>
+
+      <div class="mb-3">
+        <%= form.label :title, class: "form-label" %>
+        <%= form.text_field :title, class: "form-control" %>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :description, class: "form-label" %>
+        <%= form.text_area :description, class: "form-control" %>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :room_type, class: "form-label" %>
+        <%= form.select :room_type, options_for_select(Room.room_types.keys.map { |type| [I18n.t("rooms.room_types.#{type}"), type] }), {}, class: "form-select" %>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :day_price, class: "form-label" %>
+        <%= form.number_field :day_price, class: "form-control" %>
+      </div>
+
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <div class="mb-3">
+            <%= form.label :num_guests, class: "form-label" %>
+            <%= form.number_field :num_guests, class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <div class="mb-3">
+            <%= form.label :num_rooms, class: "form-label" %>
+            <%= form.number_field :num_rooms, class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <div class="mb-3">
+            <%= form.label :num_beds, class: "form-label" %>
+            <%= form.number_field :num_beds, class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <div class="mb-3">
+            <%= form.label :num_baths, class: "form-label" %>
+            <%= form.number_field :num_baths, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+
+      <legend class="mt-4 mb-3"><%= I18n.t('rooms.form_options') %></legend>
+
+      <div class="row">
+
+        <div class="col-12 col-md-3">
+          <div class="card p-4 mb-3 ">
+            <div class="form-check">
+              <%= form.check_box :self_check_in, class: "form-check-input" %>
+              <%= form.label :self_check_in, class: "form-check-label" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-3">
+          <div class="card p-4 mb-3 ">
+            <div class="form-check">
+              <%= form.check_box :parking, class: "form-check-input" %>
+              <%= form.label :parking, class: "form-check-label" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-3">
+          <div class="card p-4 mb-3 ">
+            <div class="form-check">
+              <%= form.check_box :kitchen, class: "form-check-input" %>
+              <%= form.label :kitchen, class: "form-check-label" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-3">
+          <div class="card p-4 mb-3 ">
+            <div class="form-check">
+              <%= form.check_box :washer, class: "form-check-input" %>
+              <%= form.label :washer, class: "form-check-label" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-3">
+          <div class="card p-4 mb-3 ">
+            <div class="form-check">
+              <%= form.check_box :dryer, class: "form-check-input" %>
+              <%= form.label :dryer, class: "form-check-label" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-3">
+          <div class="card p-4 mb-3 ">
+            <div class="form-check">
+              <%= form.check_box :dishwasher, class: "form-check-input" %>
+              <%= form.label :dishwasher, class: "form-check-label" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-3">
+          <div class="card p-4 mb-3 ">
+            <div class="form-check">
+              <%= form.check_box :wifi, class: "form-check-input" %>
+              <%= form.label :wifi, class: "form-check-label" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-3">
+          <div class="card p-4 mb-3 ">
+            <div class="form-check">
+              <%= form.check_box :tv, class: "form-check-input" %>
+              <%= form.label :tv, class: "form-check-label" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-3">
+          <div class="card p-4 mb-3 ">
+            <div class="form-check">
+              <%= form.check_box :bathroom_essentials, class: "form-check-input" %>
+              <%= form.label :bathroom_essentials, class: "form-check-label" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-3">
+          <div class="card p-4 mb-3 ">
+            <div class="form-check">
+              <%= form.check_box :bedroom_comforts, class: "form-check-input" %>
+              <%= form.label :bedroom_comforts, class: "form-check-label" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-3">
+          <div class="card p-4 mb-3 ">
+            <div class="form-check">
+              <%= form.check_box :coffee_maker, class: "form-check-input" %>
+              <%= form.label :coffee_maker, class: "form-check-label" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-3">
+          <div class="card p-4 mb-3 ">
+            <div class="form-check">
+              <%= form.check_box :hair_dryer, class: "form-check-input" %>
+              <%= form.label :hair_dryer, class: "form-check-label" %>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <legend class="mt-4 mb-3"><%= I18n.t('rooms.form_location') %></legend>
+
+      <div class="mb-3">
+        <%= form.label :location, class: "form-label" %>
+        <%= form.text_field :location, class: "form-control" %>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :location_description, class: "form-label" %>
+        <%= form.text_area :location_description, class: "form-control" %>
+      </div>
+
+      <div class="text-end mt-4">
+        <%= form.submit I18n.t('rooms.create'), class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
