@@ -1,12 +1,41 @@
-<%= link_to room_path(room, locale: @page_lang) do %>
-  <div class="col-12 col-md-4">
-    <div class="card">
-      <img src="..." class="card-img-top" alt="...">
+<div class="col-12 col-md-6">
+  <%= link_to room_path(room, locale: @page_lang) do %>
+    <div class="card p-3">
+      <div class="d-flex flex-row">
+        <div>
+          <div class="rounded-3 bg-light p-3" style="width: 10rem; height: 10rem;"></div>
+        </div>
 
-      <div class="card-body">
-        <h5 class="card-title"><%= room.title %></h5>
-        <p class="card-text"><%= room.location %></p>
+        <div>
+          <div class="card-body p-2 ps-4">
+            <h5 class="card-title"><%= room.title %></h5>
+            <p class="card-text"><small><%= room.location %></small></p>
+
+            <div class="d-flex flex-row mb-3">
+              <div class="badge badge bg-light text-muted px-2 py-1 me-3" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= t('activerecord.attributes.room.num_guests') %>">
+                <i class="fas fa-user-friends me-2"></i><%= room.num_guests %>
+              </div>
+              <div class="badge badge bg-light text-muted px-2 py-1 me-3" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= t('activerecord.attributes.room.num_rooms') %>">
+                <i class="fas fa-cube me-2"></i><%= room.num_rooms %>
+              </div>
+              <div class="badge badge bg-light text-muted px-2 py-1 me-3" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= t('activerecord.attributes.room.num_beds') %>">
+                <i class="fas fa-bed me-2"></i><%= room.num_beds %>
+              </div>
+              <div class="badge badge bg-light text-muted px-2 py-1 me-3" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= t('activerecord.attributes.room.num_baths') %>">
+                <i class="fas fa-bath me-2"></i><%= room.num_baths %>
+              </div>
+            </div>
+
+            <div>
+              <div class="d-flex flex-row">
+                <div>
+                  <span class="text-primary fw-bold text-big"><%= currency_str(room.day_price) %> </span><%= I18n.t('rooms.per_day') %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
