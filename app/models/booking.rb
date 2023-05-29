@@ -8,9 +8,7 @@ class Booking < ApplicationRecord
   validate :end_date_greater_than_start_date
 
   def end_date_greater_than_start_date
-    if end_date && start_date && end_date <= start_date
-      errors.add(:end_date, "must be greater than start date")
-    end
+    errors.add(:end_date, "must be greater than start date") if end_date && start_date && end_date <= start_date
   end
 
   def self.default_sort

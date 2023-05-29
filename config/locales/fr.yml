@@ -96,9 +96,47 @@ fr:
     room_types:
       house: "Maison"
       apartment: "Appartement"
+    room_options:
+      self_check_in:
+        label: "Enregistrement automatique"
+        icon: "fas fa-key"
+      parking:
+        label: "Parking"
+        icon: "fas fa-car"
+      kitchen:
+        label: "Cuisine"
+        icon: "fas fa-utensils"
+      washer:
+        label: "Lave-linge"
+        icon: "fas fa-socks"
+      dryer:
+        label: "Sèche-linge"
+        icon: "fas fa-water"
+      dishwasher:
+        label: "Lave-vaisselle"
+        icon: "fas fa-soap"
+      wifi:
+        label: "Wifi"
+        icon: "fas fa-wifi"
+      tv:
+        label: "Télévision"
+        icon: "fas fa-tv"
+      bathroom_essentials:
+        label: "Articles de toilette"
+        icon: ""
+      bedroom_comforts:
+        label: "Conforts de la chambre"
+        icon: ""
+      coffee_maker:
+        label: "Machine à café"
+        icon: ""
+      hair_dryer:
+        label: "Sèche-cheveux"
+        icon: ""
     per_day: par jour
     overview: Présentation
     options: Ce que propose ce logement
+    location: Emplacement du logement
 
   number:
     currency:

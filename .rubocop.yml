@@ -60,3 +60,5 @@ Layout/MultilineMethodCallIndentation:
   Enabled: false
 Style/TrailingCommaInArguments:
   EnforcedStyleForMultiline: comma
+Layout/ArrayAlignment:
+  EnforcedStyle: with_fixed_indentation

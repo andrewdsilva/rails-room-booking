@@ -8,6 +8,6 @@ module HasOwnerConcern
   private
 
   def assign_owner
-    self.user_id = User.current.id if self.user_id.nil? && User.current
+    self.user_id = User.current.id if user_id.nil? && User.current
   end
 end

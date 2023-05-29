@@ -1,6 +1,9 @@
 class Room < ApplicationRecord
   include ::HasOwnerConcern
 
+  OPTIONS_AVAIABLE = ["self_check_in", "parking", "kitchen", "washer", "dryer", "dishwasher", "wifi", "tv", "bathroom_essentials", "bedroom_comforts",
+    "coffee_maker", "hair_dryer"].freeze
+
   belongs_to :user
 
   has_many :bookings
@@ -13,5 +16,11 @@ class Room < ApplicationRecord
 
   def self.default_sort
     "created_at desc"
+  end
+
+  def options_enabled
+    OPTIONS_AVAIABLE.select do |option|
+      send(option)
+    end
   end
 end

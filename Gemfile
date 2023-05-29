@@ -87,6 +87,6 @@ gem "bootstrap", "~> 5.1.3"
 gem "devise"
 gem "importmap-rails", "~> 1.1"
 
-gem "pundit", "~> 2.3"
 gem "kaminari", "1.2.2"
+gem "pundit", "~> 2.3"
 gem "slug"

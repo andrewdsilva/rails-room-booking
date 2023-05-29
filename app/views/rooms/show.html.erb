@@ -46,6 +46,26 @@
       <div><%= @object.description %></div>
 
       <legend class="mt-4 mb-3 fw-bold text-normal"><%= I18n.t('rooms.options') %></legend>
+
+      <div class="row">
+        <% @object.options_enabled.each do |option| %>
+          <div class="col-12 col-md-6">
+            <div class="d-flex flex-row align-items-center mb-3">
+              <div class="bg-light text-muted text-center p-3 me-3 rounded" style="width: 50px;">
+                <i class="<%= I18n.t('rooms.room_options.' + option + '.icon') %>"></i>
+              </div>
+
+              <div><%= I18n.t('rooms.room_options.' + option + '.label') %></div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <% if @object.location_description.present? %>
+        <legend class="mt-4 mb-3 fw-bold text-normal"><%= I18n.t('rooms.location') %></legend>
+
+        <div><%= @object.location_description %></div>
+      <% end %>
     </div>
   </div>
 </div>
