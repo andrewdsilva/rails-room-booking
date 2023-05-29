@@ -22,10 +22,4 @@ class RoomsController < ApplicationController
   def model_params
     :room
   end
-
-  def initial_value
-    {
-      user_id: current_user.id
-    }
-  end
 end

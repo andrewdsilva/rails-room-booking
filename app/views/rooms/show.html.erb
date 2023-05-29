@@ -1,0 +1,51 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-7">
+      <div class="rounded-3 bg-light mb-3" style="height: 40vh;"></div>
+
+      <div class="d-flex">
+        <div class="rounded-3 bg-light mb-3 me-3" style="height: 6rem; width: 6rem;"></div>
+        <div class="rounded-3 bg-light mb-3 me-3" style="height: 6rem; width: 6rem;"></div>
+        <div class="rounded-3 bg-light mb-3 me-3" style="height: 6rem; width: 6rem;"></div>
+        <div class="rounded-3 bg-light mb-3 me-3" style="height: 6rem; width: 6rem;"></div>
+      </div>
+    </div>
+    <div class="col-12 col-md-5">
+      <div class="d-flex flex-row justify-content-between">
+        <div>
+          <h1><%= @object.title %></h1>
+          <p><%= @object.location %></p>
+        </div>
+
+        <div></div>
+      </div>
+
+      <div class="d-flex flex-row mb-4">
+        <div class="badge badge bg-light text-muted px-2 py-1 me-3" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= t('activerecord.attributes.room.num_guests') %>">
+          <i class="fas fa-user-friends me-2"></i><%= @object.num_guests %>
+        </div>
+        <div class="badge badge bg-light text-muted px-2 py-1 me-3" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= t('activerecord.attributes.room.num_rooms') %>">
+          <i class="fas fa-cube me-2"></i><%= @object.num_rooms %>
+        </div>
+        <div class="badge badge bg-light text-muted px-2 py-1 me-3" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= t('activerecord.attributes.room.num_beds') %>">
+          <i class="fas fa-bed me-2"></i><%= @object.num_beds %>
+        </div>
+        <div class="badge badge bg-light text-muted px-2 py-1 me-3" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= t('activerecord.attributes.room.num_baths') %>">
+          <i class="fas fa-bath me-2"></i><%= @object.num_baths %>
+        </div>
+      </div>
+
+      <div class="d-flex flex-row">
+        <div>
+          <span class="text-primary fw-bold text-big-2"><%= currency_str(@object.day_price) %> </span><%= I18n.t('rooms.per_day') %>
+        </div>
+      </div>
+
+      <legend class="mt-4 mb-3 fw-bold text-normal"><%= I18n.t('rooms.overview') %></legend>
+
+      <div><%= @object.description %></div>
+
+      <legend class="mt-4 mb-3 fw-bold text-normal"><%= I18n.t('rooms.options') %></legend>
+    </div>
+  </div>
+</div>

@@ -4,6 +4,9 @@ class ApplicationController < ActionController::Base
   include ::Pundit::Authorization
   include ::PageConcern
   include ::LocaleConcern
+  include ::AuthConcern
+
+  before_action :set_current_scope
 
   def set_layout
     "base"

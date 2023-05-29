@@ -8,4 +8,8 @@ class User < ApplicationRecord
   def admin?
     admin
   end
+
+  def self.current
+    find(CurrentScope.user_id) if CurrentScope.user_id
+  end
 end

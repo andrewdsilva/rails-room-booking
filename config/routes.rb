@@ -8,6 +8,6 @@ Rails.application.routes.draw do
 
     get '/', to: redirect("/%{locale}/rooms")
 
-    resources :rooms
+    resources :rooms, param: :slug
   end
 end
