@@ -8,14 +8,14 @@ class RoomsController < ApplicationController
   end
 
   def object_class
-    base_class.all
+    base_class.all.with_attached_images
   end
 
   def strong_params
     [
       :title, :description, :room_type, :num_guests, :num_rooms, :num_beds, :num_baths, :day_price,
       :self_check_in, :parking, :kitchen, :washer, :dryer, :dishwasher, :wifi, :tv, :bathroom_essentials, :bedroom_comforts, :coffee_maker, :hair_dryer,
-      :location, :lat, :long, :location_description
+      :location, :lat, :long, :location_description, { images: [] }
     ]
   end
 

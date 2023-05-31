@@ -82,6 +82,7 @@ fr:
         location_description: "Description de l'emplacement"
         lat: "Latitude"
         long: "Longitude"
+        images: "Images"
 
   rooms:
     title: "Logements"
@@ -93,6 +94,7 @@ fr:
     create: Valider
     form_location: 'Emplacement du logement'
     form_options: 'Ce que propose ce logement'
+    form_images: 'Photos'
     room_types:
       house: "Maison"
       apartment: "Appartement"
@@ -123,16 +125,16 @@ fr:
         icon: "fas fa-tv"
       bathroom_essentials:
         label: "Articles de toilette"
-        icon: ""
+        icon: "fas fa-toilet-paper"
       bedroom_comforts:
-        label: "Conforts de la chambre"
-        icon: ""
+        label: "Équipements de base"
+        icon: "fas fa-warehouse"
       coffee_maker:
         label: "Machine à café"
-        icon: ""
+        icon: "fas fa-coffee"
       hair_dryer:
         label: "Sèche-cheveux"
-        icon: ""
+        icon: "fas fa-air-freshener"
     per_day: par jour
     overview: Présentation
     options: Ce que propose ce logement

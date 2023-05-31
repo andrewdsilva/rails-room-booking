@@ -1,7 +1,8 @@
 <div class="container py-5">
   <div class="row">
     <div class="col-12 col-md-7">
-      <div class="rounded-3 bg-light mb-3" style="height: 40vh;"></div>
+      <div class="rounded-3 bg-light bg-image mb-3" style="height: 40vh; background-image: url('<%= url_for(@object.main_image.variant(resize_to_fit: [1000, 1000])) %>');">
+      </div>
 
       <div class="d-flex">
         <div class="rounded-3 bg-light mb-3 me-3" style="height: 6rem; width: 6rem;"></div>

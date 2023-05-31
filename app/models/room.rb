@@ -5,8 +5,8 @@ class Room < ApplicationRecord
     "coffee_maker", "hair_dryer"].freeze
 
   belongs_to :user
-
   has_many :bookings
+  has_many_attached :images, dependent: :destroy
 
   slug :title
 
@@ -22,5 +22,9 @@ class Room < ApplicationRecord
     OPTIONS_AVAIABLE.select do |option|
       send(option)
     end
+  end
+
+  def main_image
+    images.first
   end
 end
