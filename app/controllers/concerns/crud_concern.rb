@@ -59,7 +59,7 @@ module CrudConcern
     end
   end
 
-  def destroy!
+  def destroy
     authorize @object
 
     @object.destroy

@@ -87,6 +87,9 @@ fr:
   rooms:
     title: "Logements"
     new: "Ajouter un logement"
+    edit: "Modifier"
+    delete: "Supprimer le logement"
+    delete_confirm: "Êtes-vous sûr de vouloir supprimer ce logement ?"
     empty: "Aucun logement disponible."
     new_form: Ajouter un logement
     edit_form: Modifier un logement

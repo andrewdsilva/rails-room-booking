@@ -6,7 +6,8 @@
   </div>
 
   <div>
-    <%= form_with(model: @object, url: rooms_path, method: :post) do |form| %>
+    <% form_options = @object.new_record? ? { model: @object } : { model: @object, url: room_path, method: :patch } %>
+    <%= form_with(form_options) do |form| %>
       <% if @object.errors.any? %>
         <div class="alert alert-danger">
           <% @object.errors.full_messages.each do |message|%>

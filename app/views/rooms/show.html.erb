@@ -1,7 +1,7 @@
 <div class="container py-5">
   <div class="row">
     <div class="col-12 col-md-7">
-      <div class="rounded-3 bg-light bg-image mb-3" style="height: 40vh; background-image: url('<%= url_for(@object.main_image.variant(resize_to_fit: [1000, 1000])) %>');">
+      <div class="rounded-3 bg-light bg-image mb-3" style="height: 40vh; background-image: url('<%= url_for(@object.main_image&.variant(resize_to_fit: [1000, 1000])) %>');">
       </div>
 
       <div class="d-flex">
@@ -18,7 +18,22 @@
           <p><%= @object.location %></p>
         </div>
 
-        <div></div>
+        <div>
+          <div class="d-flex flex-row">
+            <% if policy(@object).edit? %>
+              <%= link_to edit_room_path(@object, locale: @page_lang), class: 'btn btn-light text-primary ms-2', 'data-bs-toggle': 'tooltip', title: t('rooms.edit') do %>
+                <i class="far fa-edit"></i>
+              <% end %>
+            <% end %>
+
+            <% if policy(@object).destroy? %>
+              <%= link_to room_path(@object, locale: @page_lang), class: 'btn btn-light text-primary ms-2', 'data-bs-toggle': 'tooltip', title: t('rooms.delete'),
+                data: { turbo_method: :delete, turbo_confirm: I18n.t('rooms.delete_confirm') } do %>
+                <i class="fas fa-trash-alt"></i>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
       </div>
 
       <div class="d-flex flex-row mb-4">

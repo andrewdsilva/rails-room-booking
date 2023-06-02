@@ -21,7 +21,7 @@ class ApplicationPolicy
   end
 
   def new?
-    @user.present?
+    create?
   end
 
   def update?
@@ -29,11 +29,11 @@ class ApplicationPolicy
   end
 
   def edit?
-    @user.present?
+    update?
   end
 
   def destroy?
-    @user.present?
+    update?
   end
 
   class Scope
