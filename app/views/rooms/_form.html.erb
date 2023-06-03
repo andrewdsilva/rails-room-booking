@@ -70,7 +70,18 @@
 
       <div class="mb-3">
         <%= form.label :images, class: "form-label" %>
-        <%= form.file_field :images, multiple: true, accept:'image/*', class: 'form-control' %>
+
+        <div class="dropzone dropzone-default dz-clickable d-flex flex-row" data-controller="image_uploader" data-dropzone-max-file-size="5" data-dropzone-max-files="10">
+          <%= form.file_field :images, multiple: true, accept:'image/*', class: 'form-control', direct_upload: true, data: { target: 'image_uploader.input' } %>
+
+          <div class="dropzone-msg dz-message needsclick text-muted p-5 w-100">
+            <div class="dropzone-msg-title fs-4 text-center">
+              <div class="mb-3"><i class="fas fa-images fs-1"></i></div>
+
+              <div class="text-dark"><%= I18n.t('forms.drag_and_drop_text') %></div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <legend class="mt-4 mb-3"><%= I18n.t('rooms.form_options') %></legend>

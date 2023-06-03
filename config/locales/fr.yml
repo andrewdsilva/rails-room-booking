@@ -143,6 +143,9 @@ fr:
     options: Ce que propose ce logement
     location: Emplacement du logement
 
+  forms:
+    drag_and_drop_text: Faites glisser ou cliquez ici pour ajouter une image
+
   number:
     currency:
       format:
