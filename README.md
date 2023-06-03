@@ -38,6 +38,8 @@ This project has been developed using the following key dependencies:
 - **Rails**: Version 7.0.4
 - **Bootstrap**: Version 5.1
 - **Rspec**
+- **Rubocop**
+- **Sass**
 
 ## Installation
 
