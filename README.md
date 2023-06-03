@@ -28,8 +28,6 @@ This project is under construction. Stay tuned for exciting updates as I continu
 
 - **Synchronization of availability with Airbnb**: Automatically synchronize the availability of your accommodations with Airbnb, ensuring consistent and up-to-date availability across platforms, saving you time and effort in managing multiple calendars.
 
-Here's the added paragraph to your README file, providing some information about the dependencies:
-
 ## Dependencies
 
 This project has been developed using the following key dependencies:
