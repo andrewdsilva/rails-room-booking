@@ -2,6 +2,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
 
+  <script>
+    function getLocale() {
+      return "<%= I18n.locale %>";
+    }
+  </script>
+
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 

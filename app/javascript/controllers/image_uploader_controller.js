@@ -5,7 +5,7 @@ import { getMetaValue, toArray, findElement, removeElement, insertAfter } from "
 
 class DirectUploadController {
   constructor(source, file) {
-    this.directUpload = createDirectUpload(file, source.url, this);
+    this.directUpload = this.createDirectUpload(file, source.url);
     this.source = source;
     this.file = file;
   }
@@ -69,33 +69,17 @@ class DirectUploadController {
     this.source.dropZone.emit("success", this.file);
     this.source.dropZone.emit("complete", this.file);
   }
-}
 
-function createDirectUploadController(source, file) {
-  return new DirectUploadController(source, file);
-}
-
-function createDirectUpload(file, url, controller) {
-  return new DirectUpload(file, url, controller);
-}
-
-function createDropZone(controller) {
-  return new Dropzone(controller.element, {
-    url: controller.url,
-    headers: controller.headers,
-    maxFiles: controller.maxFiles,
-    maxFilesize: controller.maxFileSize,
-    acceptedFiles: controller.acceptedFiles,
-    addRemoveLinks: controller.addRemoveLinks,
-    autoQueue: false
-  });
+  createDirectUpload(file, url) {
+    return new DirectUpload(file, url, this);
+  }
 }
 
 export default class extends Controller {
   static targets = ["input"];
 
   connect() {
-    this.dropZone = createDropZone(this);
+    this.dropZone = this.createDropZone();
     this.hideFileInput();
     this.bindEvents();
     Dropzone.autoDiscover = false; // necessary quirk for Dropzone error in console
@@ -110,7 +94,7 @@ export default class extends Controller {
   bindEvents() {
     this.dropZone.on("addedfile", file => {
       setTimeout(() => {
-        file.accepted && createDirectUploadController(this, file).start();
+        file.accepted && this.createDirectUploadController(file).start();
       }, 500);
     });
 
@@ -145,5 +129,28 @@ export default class extends Controller {
 
   get addRemoveLinks() {
     return this.data.get("addRemoveLinks") || true;
+  }
+
+  createDirectUploadController(file) {
+    return new DirectUploadController(this, file);
+  }
+
+  createDropZone() {
+    return new Dropzone(this.element, {
+      url: this.url,
+      headers: this.headers,
+      maxFiles: this.maxFiles,
+      maxFilesize: this.maxFileSize,
+      acceptedFiles: this.acceptedFiles,
+      addRemoveLinks: this.addRemoveLinks,
+      autoQueue: false,
+      dictFileTooBig: "File is too big ({{filesize}}mb). Max allowed file size is {{maxFilesize}}mb",
+      dictInvalidFileType: "Invalid File Type",
+      dictCancelUpload: "Cancel",
+      dictRemoveFile: "Remove",
+      dictMaxFilesExceeded: "Only {{maxFiles}} files are allowed",
+      dictDefaultMessage: "Drop files here to upload",
+    });
+    // Todo : Make translation work with I18n.js
   }
 }

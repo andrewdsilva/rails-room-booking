@@ -71,7 +71,8 @@
       <div class="mb-3">
         <%= form.label :images, class: "form-label" %>
 
-        <div class="dropzone dropzone-default dz-clickable d-flex flex-row" data-controller="image_uploader" data-dropzone-max-file-size="5" data-dropzone-max-files="10">
+        <div class="dropzone dropzone-default dz-clickable d-flex flex-row" data-controller="image_uploader"
+          data-image_uploader-max-file-size="15" data-image_uploader-max-files="10" date-image_uploader-accepted_files=".jpg, .jpeg, .png, .gif">
           <%= form.file_field :images, multiple: true, accept:'image/*', class: 'form-control', direct_upload: true, data: { target: 'image_uploader.input' } %>
 
           <div class="dropzone-msg dz-message needsclick text-muted p-5 w-100">

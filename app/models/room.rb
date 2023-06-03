@@ -27,4 +27,8 @@ class Room < ApplicationRecord
   def main_image
     images.first
   end
+
+  def other_images
+    images.drop(1)
+  end
 end
