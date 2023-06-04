@@ -1,6 +1,8 @@
 class RoomsController < ApplicationController
   include ::CrudConcern
 
+  before_action :init_booking_form, only: [:show]
+
   private
 
   def base_class
@@ -21,5 +23,11 @@ class RoomsController < ApplicationController
 
   def model_params
     :room
+  end
+
+  def init_booking_form
+    return unless user_signed_in?
+
+    @booking = @object.bookings.new num_guests: 1, user_id: current_user.id
   end
 end

@@ -83,6 +83,9 @@ fr:
         lat: "Latitude"
         long: "Longitude"
         images: "Images"
+      booking:
+        dates: Dates
+        num_guests: Nombre d'invités
 
   rooms:
     title: "Logements"
@@ -138,10 +141,13 @@ fr:
       hair_dryer:
         label: "Sèche-cheveux"
         icon: "fas fa-air-freshener"
-    per_day: par jour
+    per_day: par nuit
     overview: Présentation
     options: Ce que propose ce logement
     location: Emplacement du logement
+
+  bookings:
+    create: Réserver
 
   forms:
     drag_and_drop_text: Faites glisser ou cliquez ici pour ajouter une image

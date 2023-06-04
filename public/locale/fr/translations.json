@@ -2,6 +2,10 @@
   "fr": {
     "activerecord": {
       "attributes": {
+        "booking": {
+          "dates": "Dates",
+          "num_guests": "Nombre d'invités"
+        },
         "room": {
           "bathroom_essentials": "Articles de toilette",
           "bedroom_comforts": "Conforts de la chambre",
@@ -93,6 +97,9 @@
       "sign_up": "Inscription",
       "sign_up_button": "Valider",
       "sign_up_description": "Créez un compte."
+    },
+    "bookings": {
+      "create": "Réserver"
     },
     "date": {
       "abbr_day_names": [
@@ -5393,7 +5400,7 @@
       "new_form": "Ajouter un logement",
       "options": "Ce que propose ce logement",
       "overview": "Présentation",
-      "per_day": "par jour",
+      "per_day": "par nuit",
       "room_options": {
         "bathroom_essentials": {
           "icon": "fas fa-toilet-paper",
