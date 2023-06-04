@@ -5,10 +5,10 @@
       </div>
 
       <div class="d-flex">
-        <div class="rounded-3 bg-light mb-3 me-3" style="height: 6rem; width: 6rem;"></div>
-        <div class="rounded-3 bg-light mb-3 me-3" style="height: 6rem; width: 6rem;"></div>
-        <div class="rounded-3 bg-light mb-3 me-3" style="height: 6rem; width: 6rem;"></div>
-        <div class="rounded-3 bg-light mb-3 me-3" style="height: 6rem; width: 6rem;"></div>
+        <% @object.other_images.each do |image| %>
+          <div class="rounded-3 bg-light mb-3 me-3" style="height: 6rem; width: 6rem; background-image: url('<%= url_for(image.variant(resize_to_fit: [200, 200])) %>');">
+          </div>
+        <% end %>
       </div>
     </div>
     <div class="col-12 col-md-5">

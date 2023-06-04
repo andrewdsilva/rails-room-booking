@@ -70,7 +70,8 @@
 
       <div class="mb-3">
         <%= form.label :images, class: "form-label" %>
-        <%= form.file_field :images, multiple: true, accept:'image/*', class: 'form-control' %>
+
+        <%= render "rooms/form_images", form: form %>
       </div>
 
       <legend class="mt-4 mb-3"><%= I18n.t('rooms.form_options') %></legend>

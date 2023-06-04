@@ -1,0 +1,17 @@
+.dropzone {
+  @extend .card;
+
+  background: $white;
+  width: 100%;
+  cursor: pointer;
+  border-style: dashed !important;
+  border-width: 2px !important;
+
+  .dz-preview {
+    width: 120px;
+  }
+
+  .dz-filename, .dz-size {
+    display: none;
+  }
+}

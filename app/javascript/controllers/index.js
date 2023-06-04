@@ -6,3 +6,6 @@ import { application } from "./controllers/application";
 
 import ModalController from "./controllers/modal_controller";
 application.register("modal", ModalController);
+
+import ImageUploaderController from "./controllers/image_uploader_controller";
+application.register("image_uploader", ImageUploaderController);
