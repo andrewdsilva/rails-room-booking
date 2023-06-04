@@ -83,6 +83,8 @@ export default class extends Controller {
     this.hideFileInput();
     this.bindEvents();
     Dropzone.autoDiscover = false; // necessary quirk for Dropzone error in console
+
+    this.importExistingFiles();
   }
 
   // Private
@@ -152,5 +154,17 @@ export default class extends Controller {
       dictDefaultMessage: "Drop files here to upload",
     });
     // Todo : Make translation work with I18n.js
+  }
+
+  importExistingFiles() {
+    jsonMedia.forEach((image) => {
+      let input = Object.assign(document.createElement("input"), {type: "hidden", name: "room[images][]", value: image.id});
+
+      this.inputTarget.insertAdjacentElement("afterend", input);
+      image.controller = { hiddenInput: input };
+console.log(this);
+console.log(image);
+      this.dropZone.displayExistingFile(image, image.name);
+    });
   }
 }
