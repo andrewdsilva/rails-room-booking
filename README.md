@@ -47,7 +47,6 @@ To launch the application, follow these steps:
 2. Run `rails db:create`
 3. Run `rails db:migrate`
 4. Run `rails db:seed`
-5. Run `yarn install`
 6. Run `rails s`
 
 Then, open your browser and navigate to http://localhost:3000 to access the application.

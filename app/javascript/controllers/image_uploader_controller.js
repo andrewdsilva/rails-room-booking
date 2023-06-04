@@ -162,8 +162,7 @@ export default class extends Controller {
 
       this.inputTarget.insertAdjacentElement("afterend", input);
       image.controller = { hiddenInput: input };
-console.log(this);
-console.log(image);
+
       this.dropZone.displayExistingFile(image, image.name);
     });
   }
