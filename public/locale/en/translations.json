@@ -2,10 +2,38 @@
   "en": {
     "activerecord": {
       "attributes": {
+        "room": {
+          "bathroom_essentials": "Bathroom Essentials",
+          "bedroom_comforts": "Bedroom Comforts",
+          "coffee_maker": "Coffee Maker",
+          "day_price": "Price per Day (€)",
+          "description": "Description",
+          "dishwasher": "Dishwasher",
+          "dryer": "Dryer",
+          "hair_dryer": "Hair Dryer",
+          "images": "Images",
+          "kitchen": "Kitchen",
+          "lat": "Latitude",
+          "location": "Address",
+          "location_description": "Location Description",
+          "long": "Longitude",
+          "num_baths": "Number of Bathrooms",
+          "num_beds": "Number of Beds",
+          "num_guests": "Number of Guests",
+          "num_rooms": "Number of Rooms",
+          "parking": "Parking",
+          "room_type": "Room Type",
+          "self_check_in": "Self Check-in",
+          "slug": "Slug",
+          "title": "Title",
+          "tv": "Television",
+          "washer": "Washer",
+          "wifi": "WiFi"
+        },
         "user": {
           "email": "Your email address",
           "password": "Password",
-          "password_confirmation": "Confirm password",
+          "password_confirmation": "Confirm Password",
           "remember_me": "Remember me"
         }
       },
@@ -51,19 +79,19 @@
       "name": "Rails Room Booking"
     },
     "auth": {
-      "change_your_password": "Change My Password",
-      "connected_as": "Connected as",
+      "change_your_password": "Change Password",
+      "connected_as": "Logged in as",
       "forget": "Forgot Password?",
       "forgot_your_password": "Forgot Password?",
-      "forgot_your_password_button": "Reset My Password",
-      "login": "Log in",
-      "logout": "Log out",
+      "forgot_your_password_button": "Reset Password",
+      "login": "Login",
+      "logout": "Logout",
       "register": "Register",
       "sign_in": "Sign In",
-      "sign_in_button": "Log In",
-      "sign_in_description": "Log in to your account.",
-      "sign_up": "Sign Up",
-      "sign_up_button": "Sign Up",
+      "sign_in_button": "Sign In",
+      "sign_in_description": "Sign in to your account.",
+      "sign_up": "Register",
+      "sign_up_button": "Register",
       "sign_up_description": "Create an account."
     },
     "date": {
@@ -75761,6 +75789,9 @@
     "footer": {
       "account": "My Account"
     },
+    "forms": {
+      "drag_and_drop_text": "Drag and drop or click here to add an image"
+    },
     "helpers": {
       "page_entries_info": {
         "entry": {
@@ -75802,20 +75833,20 @@
       "fr": "French"
     },
     "nav": {
-      "login": "Log in",
-      "logout": "Log out",
+      "login": "Login",
+      "logout": "Logout",
       "register": "Register"
     },
     "number": {
       "currency": {
         "format": {
-          "delimiter": ",",
-          "format": "%u%n",
+          "delimiter": " ",
+          "format": "%n %u",
           "precision": 2,
-          "separator": ".",
+          "separator": ",",
           "significant": false,
           "strip_insignificant_zeros": false,
-          "unit": "$"
+          "unit": "€"
         }
       },
       "format": {
@@ -75874,6 +75905,79 @@
         }
       }
     },
+    "rooms": {
+      "create": "Create",
+      "delete": "Delete Accommodation",
+      "delete_confirm": "Are you sure you want to delete this accommodation?",
+      "edit": "Edit",
+      "edit_form": "Edit Accommodation",
+      "empty": "No accommodations available.",
+      "form_images": "Photos",
+      "form_location": "Accommodation Location",
+      "form_options": "What This Accommodation Offers",
+      "list": "Back to List",
+      "location": "Accommodation Location",
+      "new": "Add Accommodation",
+      "new_form": "Add Accommodation",
+      "options": "What This Accommodation Offers",
+      "overview": "Overview",
+      "per_day": "per day",
+      "room_options": {
+        "bathroom_essentials": {
+          "icon": "fas fa-toilet-paper",
+          "label": "Bathroom Essentials"
+        },
+        "bedroom_comforts": {
+          "icon": "fas fa-warehouse",
+          "label": "Bedroom Comforts"
+        },
+        "coffee_maker": {
+          "icon": "fas fa-coffee",
+          "label": "Coffee Maker"
+        },
+        "dishwasher": {
+          "icon": "fas fa-soap",
+          "label": "Dishwasher"
+        },
+        "dryer": {
+          "icon": "fas fa-water",
+          "label": "Dryer"
+        },
+        "hair_dryer": {
+          "icon": "fas fa-air-freshener",
+          "label": "Hair Dryer"
+        },
+        "kitchen": {
+          "icon": "fas fa-utensils",
+          "label": "Kitchen"
+        },
+        "parking": {
+          "icon": "fas fa-car",
+          "label": "Parking"
+        },
+        "self_check_in": {
+          "icon": "fas fa-key",
+          "label": "Self Check-in"
+        },
+        "tv": {
+          "icon": "fas fa-tv",
+          "label": "Television"
+        },
+        "washer": {
+          "icon": "fas fa-socks",
+          "label": "Washer"
+        },
+        "wifi": {
+          "icon": "fas fa-wifi",
+          "label": "WiFi"
+        }
+      },
+      "room_types": {
+        "apartment": "Apartment",
+        "house": "House"
+      },
+      "title": "Accommodations"
+    },
     "support": {
       "array": {
         "last_word_connector": ", and ",
@@ -75890,6 +75994,14 @@
         "us": "%m/%d/%Y %I:%M %p"
       },
       "pm": "pm"
+    },
+    "uploader": {
+      "cancelupload": "Cancel",
+      "defaultmessage": "Drop a file here to upload",
+      "filetoobig": "File is too large ({{filesize}}mb). Maximum allowed size is {{maxFilesize}}mb",
+      "invalidfiletype": "Invalid file type",
+      "maxfilesexceeded": "Maximum {{maxFiles}} files allowed",
+      "removefile": "Remove"
     },
     "views": {
       "pagination": {

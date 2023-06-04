@@ -3,25 +3,25 @@ en:
     name: "Rails Room Booking"
 
   nav:
-    logout: Log out
-    login: Log in
+    logout: Logout
+    login: Login
     register: Register
 
   auth:
     register: Register
-    logout: Log out
-    login: Log in
-    connected_as: Connected as
+    logout: Logout
+    login: Login
+    connected_as: Logged in as
     sign_in: Sign In
-    sign_in_description: Log in to your account.
-    sign_in_button: Log In
-    sign_up: Sign Up
+    sign_in_description: Sign in to your account.
+    sign_in_button: Sign In
+    sign_up: Register
     sign_up_description: Create an account.
-    sign_up_button: Sign Up
+    sign_up_button: Register
     forget: Forgot Password?
     forgot_your_password: Forgot Password?
-    forgot_your_password_button: Reset My Password
-    change_your_password: Change My Password
+    forgot_your_password_button: Reset Password
+    change_your_password: Change Password
 
   footer:
     account: My Account
@@ -54,5 +54,115 @@ en:
       user:
         email: "Your email address"
         password: "Password"
-        password_confirmation: "Confirm password"
+        password_confirmation: "Confirm Password"
         remember_me: "Remember me"
+      room:
+        slug: "Slug"
+        title: "Title"
+        description: "Description"
+        room_type: "Room Type"
+        num_guests: "Number of Guests"
+        num_rooms: "Number of Rooms"
+        num_beds: "Number of Beds"
+        num_baths: "Number of Bathrooms"
+        day_price: "Price per Day (€)"
+        self_check_in: "Self Check-in"
+        parking: "Parking"
+        kitchen: "Kitchen"
+        washer: "Washer"
+        dryer: "Dryer"
+        dishwasher: "Dishwasher"
+        wifi: "WiFi"
+        tv: "Television"
+        bathroom_essentials: "Bathroom Essentials"
+        bedroom_comforts: "Bedroom Comforts"
+        coffee_maker: "Coffee Maker"
+        hair_dryer: "Hair Dryer"
+        location: "Address"
+        location_description: "Location Description"
+        lat: "Latitude"
+        long: "Longitude"
+        images: "Images"
+
+  rooms:
+    title: "Accommodations"
+    new: "Add Accommodation"
+    edit: "Edit"
+    delete: "Delete Accommodation"
+    delete_confirm: "Are you sure you want to delete this accommodation?"
+    empty: "No accommodations available."
+    new_form: Add Accommodation
+    edit_form: Edit Accommodation
+    list: Back to List
+    create: Create
+    form_location: 'Accommodation Location'
+    form_options: 'What This Accommodation Offers'
+    form_images: 'Photos'
+    room_types:
+      house: "House"
+      apartment: "Apartment"
+    room_options:
+      self_check_in:
+        label: "Self Check-in"
+        icon: "fas fa-key"
+      parking:
+        label: "Parking"
+        icon: "fas fa-car"
+      kitchen:
+        label: "Kitchen"
+        icon: "fas fa-utensils"
+      washer:
+        label: "Washer"
+        icon: "fas fa-socks"
+      dryer:
+        label: "Dryer"
+        icon: "fas fa-water"
+      dishwasher:
+        label: "Dishwasher"
+        icon: "fas fa-soap"
+      wifi:
+        label: "WiFi"
+        icon: "fas fa-wifi"
+
+
+      tv:
+        label: "Television"
+        icon: "fas fa-tv"
+      bathroom_essentials:
+        label: "Bathroom Essentials"
+        icon: "fas fa-toilet-paper"
+      bedroom_comforts:
+        label: "Bedroom Comforts"
+        icon: "fas fa-warehouse"
+      coffee_maker:
+        label: "Coffee Maker"
+        icon: "fas fa-coffee"
+      hair_dryer:
+        label: "Hair Dryer"
+        icon: "fas fa-air-freshener"
+    per_day: per day
+    overview: Overview
+    options: What This Accommodation Offers
+    location: Accommodation Location
+
+  forms:
+    drag_and_drop_text: Drag and drop or click here to add an image
+
+  number:
+    currency:
+      format:
+        delimiter: " "
+        format: "%n %u"
+        precision: 2
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "€"
+
+  uploader:
+    filetoobig: "File is too large ({{filesize}}mb). Maximum allowed size is {{maxFilesize}}mb"
+    invalidfiletype: "Invalid file type"
+    cancelupload: "Cancel"
+    removefile: "Remove"
+    maxfilesexceeded: "Maximum {{maxFiles}} files allowed"
+    defaultmessage: "Drop a file here to upload"
