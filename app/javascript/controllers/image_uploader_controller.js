@@ -79,12 +79,15 @@ export default class extends Controller {
   static targets = ["input"];
 
   connect() {
-    this.dropZone = this.createDropZone();
-    this.hideFileInput();
-    this.bindEvents();
-    Dropzone.autoDiscover = false; // necessary quirk for Dropzone error in console
+    // Todo : Find a way to execute this after the translation have been loaded without settimeout
+    setTimeout(() => {
+      this.dropZone = this.createDropZone();
+      this.hideFileInput();
+      this.bindEvents();
+      Dropzone.autoDiscover = false; // necessary quirk for Dropzone error in console
 
-    this.importExistingFiles();
+      this.importExistingFiles();
+    }, 500);
   }
 
   // Private
@@ -146,14 +149,13 @@ export default class extends Controller {
       acceptedFiles: this.acceptedFiles,
       addRemoveLinks: this.addRemoveLinks,
       autoQueue: false,
-      dictFileTooBig: "File is too big ({{filesize}}mb). Max allowed file size is {{maxFilesize}}mb",
-      dictInvalidFileType: "Invalid File Type",
-      dictCancelUpload: "Cancel",
-      dictRemoveFile: "Remove",
-      dictMaxFilesExceeded: "Only {{maxFiles}} files are allowed",
-      dictDefaultMessage: "Drop files here to upload",
+      dictFileTooBig: i18n.t("uploader.filetoobig"),
+      dictInvalidFileType: i18n.t("uploader.invalidfiletype"),
+      dictCancelUpload: i18n.t("uploader.cancelupload"),
+      dictRemoveFile: i18n.t("uploader.removefile"),
+      dictMaxFilesExceeded: i18n.t("uploader.maxfilesexceeded"),
+      dictDefaultMessage: i18n.t("uploader.defaultmessage"),
     });
-    // Todo : Make translation work with I18n.js
   }
 
   importExistingFiles() {
