@@ -156,3 +156,11 @@ fr:
         significant: false
         strip_insignificant_zeros: false
         unit: "€"
+
+  uploader:
+    filetoobig: "Fichier trop gros ({{filesize}}mb). Maximum autorisé {{maxFilesize}}mb"
+    invalidfiletype: "Type invalide"
+    cancelupload: "Annuler"
+    removefile: "Supprimer"
+    maxfilesexceeded: "Maximum {{maxFiles}} fichiers autorisés"
+    defaultmessage: "Déposer un fichier ici pour le télécharger"

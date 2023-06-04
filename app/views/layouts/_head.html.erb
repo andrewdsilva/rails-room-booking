@@ -14,7 +14,10 @@
 	<%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
 	<%= javascript_importmap_tags %>
 
-  <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+  <link rel="preload" href="/locale/<%= @page_lang %>/translations.json" as=”fetch” type=”application/json” crossorigin=”anonymous”>
+
+  <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module", defer: true %>
+  <%= javascript_include_tag "https://cdn.jsdelivr.net/npm/i18n-js@4.2.3/dist/browser/index.min.js" %>
 
   <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" defer>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" defer>

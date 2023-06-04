@@ -91,3 +91,7 @@ gem "image_processing", "~> 1.2"
 gem "kaminari", "1.2.2"
 gem "pundit", "~> 2.3"
 gem "slug"
+
+gem "i18n-js"
+gem "listen"
+gem "rails-i18n"

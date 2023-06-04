@@ -1,0 +1,8 @@
+---
+translations:
+  - file: public/locale/fr/translations.json
+    patterns:
+      - "fr.*"
+  - file: public/locale/en/translations.json
+    patterns:
+      - "en.*"
