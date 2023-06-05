@@ -1,78 +1,90 @@
-<script src="https://cdn.jsdelivr.net/npm/@easepick/datetime@1.2.1/dist/index.umd.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@easepick/core@1.2.1/dist/index.umd.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@easepick/base-plugin@1.2.1/dist/index.umd.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@easepick/range-plugin@1.2.1/dist/index.umd.min.js"></script>
+<div id="booking-form">
+  <div class="mt-4">
+    <div class="shadow booking-form p-4">
+      <%= form_with(model: booking) do |form| %>
+        <%= form.hidden_field :room_id, value: booking.room_id %>
 
-<div class="mt-4">
-  <div class="shadow booking-form p-4">
-    <%= form_with(model: @booking) do |form| %>
-      <div class="mb-3">
-        <%= form.label :dates, class: "form-label" %>
-        <%= form.text_field :dates, class: "form-control", id: 'datepicker' %>
-      </div>
+        <div class="mb-3">
+          <%= form.label :dates, class: "form-label" %>
+          <%= form.text_field :dates, class: "form-control", id: 'datepicker' %>
+        </div>
 
-      <div class="mb-3">
-        <%= form.label :num_guests, class: "form-label" %>
-        <%= form.text_field :num_guests, class: "form-control", type: 'number' %>
-      </div>
+        <div class="mb-3">
+          <%= form.label :num_guests, class: "form-label" %>
+          <%= form.text_field :num_guests, class: "form-control", type: 'number' %>
+        </div>
 
-      <div class="mt-4">
-        <%= form.submit I18n.t('bookings.create'), class: "btn btn-primary w-100" %>
-      </div>
-    <% end %>
+        <div class="mt-4">
+          <%= form.submit I18n.t('bookings.create'), class: "btn btn-primary w-100" %>
+        </div>
+
+        <% if booking.errors.any? %>
+          <div class="alert alert-danger mt-4">
+            <% booking.errors.full_messages.each do |message|%>
+              <div><%= message %></div>
+            <%end%>
+          </div>
+        <%end%>
+      <% end %>
+    </div>
   </div>
-</div>
 
-<script>
-  const DateTime = easepick.DateTime;
-  const bookedDates = [ // Todo : put the right dates
-      '2023-06-02',
-      ['2023-06-06', '2023-06-11'],
-      '2023-06-18',
-      '2023-06-19',
-      '2023-06-20',
-      '2023-06-25',
-      '2023-06-28',
-  ].map(d => {
-      if (d instanceof Array) {
-        const start = new DateTime(d[0], 'YYYY-MM-DD');
-        const end = new DateTime(d[1], 'YYYY-MM-DD');
+  <script>
+    // Todo : put the right dates
+    // Todo : Move this code to stimulus controller
 
-        return [start, end];
-      }
+    (() => {
+      let DateTime = easepick.DateTime;
+      let bookedDates = [
+          '2023-06-02',
+          ['2023-06-06', '2023-06-11'],
+          '2023-06-18',
+          '2023-06-19',
+          '2023-06-20',
+          '2023-06-25',
+          '2023-06-28',
+      ].map(d => {
+          if (d instanceof Array) {
+            const start = new DateTime(d[0], 'YYYY-MM-DD');
+            const end = new DateTime(d[1], 'YYYY-MM-DD');
 
-      return new DateTime(d, 'YYYY-MM-DD');
-  });
-  const picker = new easepick.create({
-    lang: getLocale(),
-    format: "DD MMM YYYY",
-    element: document.getElementById('datepicker'),
-    css: [
-      'https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2.1/dist/index.css',
-      '/assets/easepick.css',
-    ],
-    plugins: ['RangePlugin', 'LockPlugin'],
-    RangePlugin: {
-      tooltipNumber(num) {
-        return num - 1;
-      },
-      locale: {
-        one: 'night',
-        other: 'nights',
-      },
-    },
-    LockPlugin: {
-      minDate: new Date(),
-      minDays: 2,
-      inseparable: true,
-      filter(date, picked) {
-        if (picked.length === 1) {
-          const incl = date.isBefore(picked[0]) ? '[)' : '(]';
-          return !picked[0].isSame(date, 'day') && date.inArray(bookedDates, incl);
+            return [start, end];
+          }
+
+          return new DateTime(d, 'YYYY-MM-DD');
+      });
+      let picker = new easepick.create({
+        lang: getLocale(),
+        format: "DD MMM YYYY",
+        element: document.getElementById('datepicker'),
+        css: [
+          'https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2.1/dist/index.css',
+          '/assets/easepick.css',
+        ],
+        plugins: ['RangePlugin', 'LockPlugin'],
+        RangePlugin: {
+          tooltipNumber(num) {
+            return num - 1;
+          },
+          locale: {
+            one: 'night',
+            other: 'nights',
+          },
+        },
+        LockPlugin: {
+          minDate: new Date(),
+          minDays: 2,
+          inseparable: true,
+          filter(date, picked) {
+            if (picked.length === 1) {
+              const incl = date.isBefore(picked[0]) ? '[)' : '(]';
+              return !picked[0].isSame(date, 'day') && date.inArray(bookedDates, incl);
+            }
+
+            return date.inArray(bookedDates, '[)');
+          },
         }
-
-        return date.inArray(bookedDates, '[)');
-      },
-    }
-  });
-</script>
+      });
+    })();
+  </script>
+</div>
