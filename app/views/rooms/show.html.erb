@@ -73,7 +73,6 @@
       <% end %>
 
       <% if policy(:booking).new? %>
-        <%= render "bookings/form_imports" %>
         <%= render "bookings/form", room: @object, booking: @booking %>
       <% end %>
     </div>

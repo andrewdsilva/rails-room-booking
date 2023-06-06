@@ -4,9 +4,9 @@
       <%= form_with(model: booking) do |form| %>
         <%= form.hidden_field :room_id, value: booking.room_id %>
 
-        <div class="mb-3">
+        <div class="mb-3" data-controller="datepicker">
           <%= form.label :dates, class: "form-label" %>
-          <%= form.text_field :dates, class: "form-control", id: 'datepicker' %>
+          <%= form.text_field :dates, class: "form-control datepicker" %>
         </div>
 
         <div class="mb-3">
@@ -28,63 +28,4 @@
       <% end %>
     </div>
   </div>
-
-  <script>
-    // Todo : put the right dates
-    // Todo : Move this code to stimulus controller
-
-    (() => {
-      let DateTime = easepick.DateTime;
-      let bookedDates = [
-          '2023-06-02',
-          ['2023-06-06', '2023-06-11'],
-          '2023-06-18',
-          '2023-06-19',
-          '2023-06-20',
-          '2023-06-25',
-          '2023-06-28',
-      ].map(d => {
-          if (d instanceof Array) {
-            const start = new DateTime(d[0], 'YYYY-MM-DD');
-            const end = new DateTime(d[1], 'YYYY-MM-DD');
-
-            return [start, end];
-          }
-
-          return new DateTime(d, 'YYYY-MM-DD');
-      });
-      let picker = new easepick.create({
-        lang: getLocale(),
-        format: "DD MMM YYYY",
-        element: document.getElementById('datepicker'),
-        css: [
-          'https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2.1/dist/index.css',
-          '/assets/easepick.css',
-        ],
-        plugins: ['RangePlugin', 'LockPlugin'],
-        RangePlugin: {
-          tooltipNumber(num) {
-            return num - 1;
-          },
-          locale: {
-            one: 'night',
-            other: 'nights',
-          },
-        },
-        LockPlugin: {
-          minDate: new Date(),
-          minDays: 2,
-          inseparable: true,
-          filter(date, picked) {
-            if (picked.length === 1) {
-              const incl = date.isBefore(picked[0]) ? '[)' : '(]';
-              return !picked[0].isSame(date, 'day') && date.inArray(bookedDates, incl);
-            }
-
-            return date.inArray(bookedDates, '[)');
-          },
-        }
-      });
-    })();
-  </script>
 </div>

@@ -9,3 +9,6 @@ application.register("modal", ModalController);
 
 import ImageUploaderController from "./controllers/image_uploader_controller";
 application.register("image_uploader", ImageUploaderController);
+
+import DatepickerController from "./controllers/datepicker_controller";
+application.register("datepicker", DatepickerController);
