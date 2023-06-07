@@ -135,8 +135,15 @@ module CrudConcern
     raise NotImplementedError
   end
 
+  def use_slug?
+    true
+  end
+
   def set_object
-    @object = object_class.find_by slug: params[:slug]
+    return @object = object_class.find_by(slug: params[:slug]) if use_slug?
+
+    @object = object_class.find params[:id]
+
   rescue ActiveRecord::RecordNotFound
     head :not_found
   end

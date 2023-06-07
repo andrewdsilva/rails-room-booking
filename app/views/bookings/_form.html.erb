@@ -4,8 +4,11 @@
       <%= form_with(model: booking) do |form| %>
         <%= form.hidden_field :room_id, value: booking.room_id %>
 
-        <div class="mb-3" data-controller="datepicker">
+        <div class="mb-3" data-controller="datepicker" data-day-price="<%= booking.room.day_price %>">
           <%= form.label :dates, class: "form-label" %>
+
+          <%= form.hidden_field :start_date, value: booking.start_date, class: "start_date" %>
+          <%= form.hidden_field :end_date, value: booking.end_date, class: "end_date" %>
           <%= form.text_field :dates, class: "form-control datepicker" %>
         </div>
 

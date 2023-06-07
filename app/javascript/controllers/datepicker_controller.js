@@ -5,12 +5,15 @@ import "easepick-core";
 import "easepick-base-plugin";
 import "easepick-range-plugin";
 import "easepick-lock-plugin";
+import "dayjs";
 
 export default class extends Controller {
   connect() {
+    this.initDate();
+
     let bookedDates = this.bookedDates;
 
-    let picker = new easepick.create({
+    this.picker = new easepick.create({
       lang: window.getLocale(),
       format: "DD MMM YYYY",
       element: this.input,
@@ -28,6 +31,10 @@ export default class extends Controller {
           other: "nights",
         },
       },
+      RangePlugin: {
+        startDate: this.startInput.value,
+        endDate: this.endInput.value,
+      },
       LockPlugin: {
         minDate: new Date(),
         minDays: 2,
@@ -41,6 +48,20 @@ export default class extends Controller {
         },
       },
     });
+
+    this.picker.on("select", () => { this.onSelect(); });
+  }
+
+  initDate() {
+    if (!this.startInput.value || !this.endInput.value) {
+      this.startInput.value = dayjs().format('YYYY-MM-DD');
+      this.endInput.value = dayjs().add(1, 'day').format('YYYY-MM-DD');
+    }
+  }
+
+  onSelect() {
+    this.startInput.value = dayjs(this.picker.getStartDate()).format('YYYY-MM-DD');
+    this.endInput.value = dayjs(this.picker.getEndDate()).format('YYYY-MM-DD');
   }
 
   get bookedDates() {
@@ -56,5 +77,17 @@ export default class extends Controller {
 
   get input() {
     return this.element.querySelector(".datepicker");
+  }
+
+  get startInput() {
+    return this.element.querySelector(".start_date");
+  }
+
+  get endInput() {
+    return this.element.querySelector(".end_date");
+  }
+
+  get dayPrice() {
+    return this.data.get("dayPrice");
   }
 }

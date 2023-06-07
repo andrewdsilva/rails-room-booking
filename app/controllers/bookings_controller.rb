@@ -20,4 +20,8 @@ class BookingsController < ApplicationController
   def model_params
     :booking
   end
+
+  def use_slug?
+    false
+  end
 end
