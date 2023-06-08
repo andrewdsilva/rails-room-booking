@@ -15,7 +15,7 @@ export default class extends Controller {
 
     this.picker = new easepick.create({
       lang: window.getLocale(),
-      format: "DD MMM YYYY",
+      format: this.displayFormat,
       element: this.input,
       css: [
         "https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2.1/dist/index.css",
@@ -32,8 +32,8 @@ export default class extends Controller {
         },
       },
       RangePlugin: {
-        startDate: this.startInput.value,
-        endDate: this.endInput.value,
+        startDate: this.startDate.format(this.displayFormat),
+        endDate: this.endDate.format(this.displayFormat),
       },
       LockPlugin: {
         minDate: new Date(),
@@ -54,24 +54,27 @@ export default class extends Controller {
 
   initDate() {
     if (!this.startInput.value || !this.endInput.value) {
-      this.startInput.value = dayjs().format('YYYY-MM-DD');
-      this.endInput.value = dayjs().add(1, 'day').format('YYYY-MM-DD');
+      this.startDate = dayjs();
+      this.endDate = dayjs().add(1, "day");
+
+      this.startInput.value = this.startDate.format(this.outputFormat);
+      this.endInput.value = this.endDate.format(this.outputFormat);
     }
   }
 
   onSelect() {
-    this.startInput.value = dayjs(this.picker.getStartDate()).format('YYYY-MM-DD');
-    this.endInput.value = dayjs(this.picker.getEndDate()).format('YYYY-MM-DD');
+    this.startInput.value = dayjs(this.picker.getStartDate()).format(this.outputFormat);
+    this.endInput.value = dayjs(this.picker.getEndDate()).format(this.outputFormat);
   }
 
   get bookedDates() {
     return (this.data.get("bookedDates") || []).map(d => {
       if (Array.isArray(d)) {
-        const start = new DateTime(d[0], "YYYY-MM-DD");
-        const end = new DateTime(d[1], "YYYY-MM-DD");
+        const start = new DateTime(d[0], this.outputFormat);
+        const end = new DateTime(d[1], this.outputFormat);
         return [start, end];
       }
-      return new DateTime(d, "YYYY-MM-DD");
+      return new DateTime(d, this.outputFormat);
     });
   }
 
@@ -89,5 +92,13 @@ export default class extends Controller {
 
   get dayPrice() {
     return this.data.get("dayPrice");
+  }
+
+  get displayFormat() {
+    return "DD MMM YYYY";
+  }
+
+  get outputFormat() {
+    return "YYYY-MM-DD";
   }
 }

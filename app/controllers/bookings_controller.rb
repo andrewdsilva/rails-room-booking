@@ -8,7 +8,7 @@ class BookingsController < ApplicationController
   end
 
   def object_class
-    base_class.all
+    base_class.where(user_id: current_user.id)
   end
 
   def strong_params

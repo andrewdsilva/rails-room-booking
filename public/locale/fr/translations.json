@@ -99,7 +99,9 @@
       "sign_up_description": "Créez un compte."
     },
     "bookings": {
-      "create": "Réserver"
+      "create": "Réserver",
+      "empty": "Vous n'avez effectué aucune réservation",
+      "title": "Mes réservations"
     },
     "date": {
       "abbr_day_names": [
@@ -5314,7 +5316,10 @@
     "nav": {
       "login": "Connexion",
       "logout": "Se déconnecter",
-      "register": "Inscription"
+      "my_bookings": "Mes réservations",
+      "my_rooms": "Gérer mes logements",
+      "register": "Inscription",
+      "rooms": "Trouver un logement"
     },
     "number": {
       "currency": {

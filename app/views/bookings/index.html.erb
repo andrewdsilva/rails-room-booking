@@ -1,0 +1,17 @@
+<div class="container py-5">
+  <div class="d-flex align-items-center justify-content-between mb-5">
+    <h1 class="mb-0 fw-bold"><%= t('bookings.title') %></h1>
+  </div>
+
+  <div class="row">
+    <%= render @objects %>
+  </div>
+
+  <% if @objects.length == 0 %>
+    <div class="text-muted"><%= t('bookings.empty') %></div>
+  <% end %>
+
+  <div>
+    <%= paginate @objects %>
+  </div>
+</div>

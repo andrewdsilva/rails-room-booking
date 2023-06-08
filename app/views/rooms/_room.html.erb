@@ -1,13 +1,13 @@
 <div class="col-12 col-md-6">
   <%= link_to room_path(room, locale: @page_lang) do %>
     <div class="card p-3 mb-3">
-      <div class="d-flex flex-row">
+      <div class="d-flex flex-column flex-md-row">
         <div>
           <div class="rounded-3 bg-image bg-light p-3" style="width: 10rem; height: 10rem; background-image: url('<%= url_for(room.main_image&.variant(resize_to_fit: [500, 500])) %>');"></div>
         </div>
 
         <div>
-          <div class="card-body p-2 ps-4">
+          <div class="card-body p-2 ps-md-4">
             <h5 class="card-title"><%= room.title %></h5>
             <p class="card-text"><small><%= room.location %></small></p>
 

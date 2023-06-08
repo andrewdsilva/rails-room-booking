@@ -10,7 +10,11 @@ class RoomsController < ApplicationController
   end
 
   def object_class
-    base_class.all.with_attached_images
+    objects = base_class.all.with_attached_images
+
+    objects = objects.where(user_id: current_user.id) if params[:scope] == "my"
+
+    objects
   end
 
   def strong_params

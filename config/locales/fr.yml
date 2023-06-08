@@ -6,6 +6,9 @@ fr:
     logout: Se déconnecter
     login: Connexion
     register: Inscription
+    rooms: Trouver un logement
+    my_rooms: Gérer mes logements
+    my_bookings: Mes réservations
 
   auth:
     register: Inscription
@@ -148,6 +151,8 @@ fr:
 
   bookings:
     create: Réserver
+    title: Mes réservations
+    empty: Vous n'avez effectué aucune réservation
 
   forms:
     drag_and_drop_text: Faites glisser ou cliquez ici pour ajouter une image

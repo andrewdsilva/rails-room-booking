@@ -10,9 +10,20 @@
 
     <div class="collapse navbar-collapse" id="main-menu">
       <ul class="nav ms-md-auto">
+        <li>
+          <%= link_to I18n.t('nav.rooms'), rooms_path(locale: @page_lang), class: 'nav-link px-3 link-dark' %>
+        </li>
+
         <% if user_signed_in? %>
 
-          <li class="dropdown">
+          <li>
+            <%= link_to I18n.t('nav.my_rooms'), scoped_rooms_path(locale: @page_lang, scope: "my"), class: 'nav-link px-3 link-dark' %>
+          </li>
+          <li>
+            <%= link_to I18n.t('nav.my_bookings'), bookings_path(locale: @page_lang), class: 'nav-link px-3 link-dark' %>
+          </li>
+
+          <li class="dropdown d-flex align-items-center ms-md-5">
             <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
               <img src="<%= image_path "avatar.png" %>" alt="" width="32" height="32" class="rounded-circle me-2">
             </a>
@@ -23,14 +34,12 @@
 
         <% else %>
 
-          <ul class="nav mb-2 justify-content-md-center mb-md-0 ms-lg-auto me-lg-auto">
-            <li>
-              <%= link_to I18n.t('nav.login'), new_user_session_path(locale: @page_lang), class: 'nav-link px-3 link-dark' %>
-            </li>
-            <li class="ms-3">
-              <%= link_to I18n.t('nav.register'), new_user_registration_path(locale: @page_lang), class: 'btn btn-primary nav-link px-3 link-light' %>
-            </li>
-          </ul>
+          <li>
+            <%= link_to I18n.t('nav.login'), new_user_session_path(locale: @page_lang), class: 'nav-link px-3 link-dark' %>
+          </li>
+          <li class="ms-3">
+            <%= link_to I18n.t('nav.register'), new_user_registration_path(locale: @page_lang), class: 'btn btn-primary nav-link px-3 link-light' %>
+          </li>
 
         <% end %>
       </ul>

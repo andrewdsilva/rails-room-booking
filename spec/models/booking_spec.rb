@@ -12,7 +12,7 @@ RSpec.describe ::Booking, type: :model do
 
     booking = create(:booking_1, user: user, room: room, start_date: start_date, end_date: end_date)
 
-    expect(booking.total_price).to eq(450)
+    expect(booking.compute_price).to eq(450)
   end
 
   it "Should require start and end dates" do
