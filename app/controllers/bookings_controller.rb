@@ -8,6 +8,8 @@ class BookingsController < ApplicationController
   end
 
   def object_class
+    return base_class.none if current_user.nil?
+
     base_class.where(user_id: current_user.id)
   end
 

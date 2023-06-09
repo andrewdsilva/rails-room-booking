@@ -21,10 +21,16 @@ class Booking < ApplicationRecord
     room.day_price * (end_date - start_date).to_i
   end
 
+  def start_formated
+    I18n.l(start_date, format: :long)
+  end
+
+  def end_formated
+    I18n.l(end_date, format: :long)
+  end
+
   def formated_dates
-    start_date_str = I18n.l(start_date, format: :long)
-    end_date_str = I18n.l(end_date, format: :long)
-    "#{start_date_str} - #{end_date_str}"
+    "#{start_formated} - #{end_formated}"
   end
 
   def start_or_end_changed?
@@ -33,5 +39,9 @@ class Booking < ApplicationRecord
 
   def set_price_ht
     self.total_ht = compute_price
+  end
+
+  def total_ttc
+    self.total_ht * 1.2
   end
 end
