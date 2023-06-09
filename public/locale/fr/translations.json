@@ -2,6 +2,10 @@
   "fr": {
     "activerecord": {
       "attributes": {
+        "booking": {
+          "dates": "Dates",
+          "num_guests": "Nombre d'invités"
+        },
         "room": {
           "bathroom_essentials": "Articles de toilette",
           "bedroom_comforts": "Conforts de la chambre",
@@ -93,6 +97,23 @@
       "sign_up": "Inscription",
       "sign_up_button": "Valider",
       "sign_up_description": "Créez un compte."
+    },
+    "bookings": {
+      "back": "Retour à la liste",
+      "cancel": "Annuler la réservation",
+      "cancel_confirm": "Êtes vous sûr de vouloir annuler la réservation ?",
+      "canceled": "Annulé",
+      "create": "Réserver",
+      "empty": "Vous n'avez effectué aucune réservation",
+      "end": "Départ",
+      "guest": "personne",
+      "guests": "personnes",
+      "num_guests": "Nombre de personnes",
+      "payment_info": "Informations de paiement",
+      "start": "Arrivée",
+      "title": "Mes réservations",
+      "total_ht": "Prix HT",
+      "total_ttc": "Coût total"
     },
     "date": {
       "abbr_day_names": [
@@ -5307,7 +5328,10 @@
     "nav": {
       "login": "Connexion",
       "logout": "Se déconnecter",
-      "register": "Inscription"
+      "my_bookings": "Mes réservations",
+      "my_rooms": "Gérer mes logements",
+      "register": "Inscription",
+      "rooms": "Trouver un logement"
     },
     "number": {
       "currency": {
@@ -5389,11 +5413,12 @@
       "form_options": "Ce que propose ce logement",
       "list": "Retour à la liste",
       "location": "Emplacement du logement",
+      "my": "Mes logements",
       "new": "Ajouter un logement",
       "new_form": "Ajouter un logement",
       "options": "Ce que propose ce logement",
       "overview": "Présentation",
-      "per_day": "par jour",
+      "per_day": "par nuit",
       "room_options": {
         "bathroom_essentials": {
           "icon": "fas fa-toilet-paper",

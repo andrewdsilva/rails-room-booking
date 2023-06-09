@@ -1,0 +1,34 @@
+<div id="booking-form">
+  <div class="mt-4">
+    <div class="shadow booking-form p-4">
+      <%= form_with(model: booking) do |form| %>
+        <%= form.hidden_field :room_id, value: booking.room_id %>
+
+        <div class="mb-3" data-controller="datepicker" data-day-price="<%= booking.room.day_price %>">
+          <%= form.label :dates, class: "form-label" %>
+
+          <%= form.hidden_field :start_date, value: booking.start_date, class: "start_date" %>
+          <%= form.hidden_field :end_date, value: booking.end_date, class: "end_date" %>
+          <%= form.text_field :dates, class: "form-control datepicker" %>
+        </div>
+
+        <div class="mb-3">
+          <%= form.label :num_guests, class: "form-label" %>
+          <%= form.text_field :num_guests, class: "form-control", type: 'number' %>
+        </div>
+
+        <div class="mt-4">
+          <%= form.submit I18n.t('bookings.create'), class: "btn btn-primary w-100" %>
+        </div>
+
+        <% if booking.errors.any? %>
+          <div class="alert alert-danger mt-4">
+            <% booking.errors.full_messages.each do |message|%>
+              <div><%= message %></div>
+            <%end%>
+          </div>
+        <%end%>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+@import "variables";
+
+.container.range-plugin .calendar {
+  >.days-grid>.day.end, >.days-grid>.day.start {
+    background-color: $primary;
+    color: $white !important;
+  }
+
+  >.days-grid>.day.in-range {
+    background: $green-light;
+  }
+
+  >.days-grid>.day.end:after {
+    border-right-color: $primary;
+  }
+
+  >.days-grid>.day.start:after {
+    border-left-color: $primary;
+  }
+
+  >.days-grid>.day:hover {
+    border-color: $primary;
+    color: $primary;
+  }
+
+  >.header button:hover > svg {
+    color: $primary;
+    fill: $primary;
+  }
+}

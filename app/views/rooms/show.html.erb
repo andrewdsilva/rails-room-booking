@@ -71,6 +71,10 @@
 
         <div><%= @object.location_description %></div>
       <% end %>
+
+      <% if policy(:booking).new? %>
+        <%= render "bookings/form", room: @object, booking: @booking %>
+      <% end %>
     </div>
   </div>
 </div>

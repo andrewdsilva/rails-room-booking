@@ -1,0 +1,69 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-7">
+      <div class="rounded-3 bg-light bg-image mb-3" style="height: 40vh; background-image: url('<%= url_for(@object.room.main_image&.variant(resize_to_fit: [1000, 1000])) %>');">
+      </div>
+    </div>
+    <div class="col-12 col-md-5">
+      <div class="d-flex flex-row justify-content-between">
+        <div>
+          <h1><%= @object.room.title %></h1>
+          <p><%= @object.room.location %></p>
+        </div>
+
+        <div>
+          <div class="d-flex flex-row">
+            <div class="ms-2">
+              <% if @object.canceled? %>
+                <div class="badge bg-danger"><%= I18n.t('bookings.canceled') %></div>
+              <% end %>
+            </div>
+
+            <%= link_to bookings_path(locale: @page_lang), class: 'btn btn-link text-primary ms-2', 'data-bs-toggle': 'tooltip', title: t('bookings.back') do %>
+              <i class="fas fa-chevron-circle-left"></i>
+            <% end %>
+
+            <% if policy(@object).edit? && !@object.canceled? %>
+              <%= link_to cancel_booking_path(@object, locale: @page_lang), class: 'btn btn-light text-primary ms-2', 'data-bs-toggle': 'tooltip', title: t('bookings.cancel'),
+                data: { turbo_method: :post, turbo_confirm: I18n.t('bookings.cancel_confirm') } do %>
+                <i class="fas fa-ban"></i>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex flex-row mb-4">
+        <%= render "rooms/numbers", room: @object.room %>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-12 col-md-6">
+          <div class="fw-bold"><%= I18n.t('bookings.start') %></div>
+          <div><%= @object.start_formated %></div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="fw-bold"><%= I18n.t('bookings.end') %></div>
+          <div><%= @object.end_formated %></div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <div class="fw-bold"><%= I18n.t('bookings.num_guests') %></div>
+        <div><%= @object.num_guests %> <%= I18n.t(@object.num_guests > 1 ? 'bookings.guests' : 'bookings.guest') %></div>
+      </div>
+
+      <legend class="mt-4 mb-3 fw-bold text-normal"><%= I18n.t('bookings.payment_info') %></legend>
+
+      <div class="mb-3">
+        <div class="fw-bold"><%= I18n.t('bookings.total_ht') %></div>
+        <div><%= currency_str(@object.total_ht) %></div>
+      </div>
+
+      <div class="mb-3">
+        <div class="fw-bold"><%= I18n.t('bookings.total_ttc') %></div>
+        <div><%= currency_str(@object.total_ttc) %></div>
+      </div>
+    </div>
+  </div>
+</div>

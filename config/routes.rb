@@ -8,6 +8,16 @@ Rails.application.routes.draw do
 
     get '/', to: redirect("/%{locale}/rooms")
 
-    resources :rooms, param: :slug
+    resources :rooms, param: :slug do
+      collection do
+        get ":scope", to: "rooms#index", as: "scoped", constraints: { scope: "my" }
+      end
+    end
+
+    resources :bookings do
+      member do
+        post "cancel"
+      end
+    end
   end
 end

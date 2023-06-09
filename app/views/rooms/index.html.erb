@@ -1,6 +1,6 @@
 <div class="container py-5">
   <div class="d-flex align-items-center justify-content-between mb-5">
-    <h1 class="mb-0 fw-bold"><%= t('rooms.title') %></h1>
+    <h1 class="mb-0 fw-bold"><%= t(@scope.nil? ? 'rooms.title' : 'rooms.' + @scope) %></h1>
 
     <div>
       <% if policy(:room).new? %>

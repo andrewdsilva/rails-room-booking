@@ -20,9 +20,9 @@ This project is under construction. Stay tuned for exciting updates as I continu
 
 - **Management of your homes**: Effortlessly handle your property portfolio, including adding, editing, and managing various details such as property descriptions, options, and pricing.
 
-## Upcoming features 🚀
-
 - **Online booking**: Enable your customers to easily make reservations for your accommodations directly through the platform, streamlining the booking process for a seamless user experience.
+
+## Upcoming features 🚀
 
 - **Online payment via Stripe**: Facilitate secure online payments by integrating with Stripe, a trusted payment gateway, allowing your users to make payments conveniently and securely.
 

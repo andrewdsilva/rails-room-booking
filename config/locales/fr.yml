@@ -6,6 +6,9 @@ fr:
     logout: Se déconnecter
     login: Connexion
     register: Inscription
+    rooms: Trouver un logement
+    my_rooms: Gérer mes logements
+    my_bookings: Mes réservations
 
   auth:
     register: Inscription
@@ -83,9 +86,13 @@ fr:
         lat: "Latitude"
         long: "Longitude"
         images: "Images"
+      booking:
+        dates: Dates
+        num_guests: Nombre d'invités
 
   rooms:
     title: "Logements"
+    my: Mes logements
     new: "Ajouter un logement"
     edit: "Modifier"
     delete: "Supprimer le logement"
@@ -138,10 +145,27 @@ fr:
       hair_dryer:
         label: "Sèche-cheveux"
         icon: "fas fa-air-freshener"
-    per_day: par jour
+    per_day: par nuit
     overview: Présentation
     options: Ce que propose ce logement
     location: Emplacement du logement
+
+  bookings:
+    create: Réserver
+    title: Mes réservations
+    empty: Vous n'avez effectué aucune réservation
+    start: Arrivée
+    end: Départ
+    num_guests: Nombre de personnes
+    guest: personne
+    guests: personnes
+    payment_info: Informations de paiement
+    total_ht: Prix HT
+    total_ttc: Coût total
+    back: Retour à la liste
+    cancel: Annuler la réservation
+    cancel_confirm: Êtes vous sûr de vouloir annuler la réservation ?
+    canceled: Annulé
 
   forms:
     drag_and_drop_text: Faites glisser ou cliquez ici pour ajouter une image

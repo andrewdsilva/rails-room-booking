@@ -2,6 +2,10 @@
   "en": {
     "activerecord": {
       "attributes": {
+        "booking": {
+          "dates": "Dates",
+          "num_guests": "Number of Guests"
+        },
         "room": {
           "bathroom_essentials": "Bathroom Essentials",
           "bedroom_comforts": "Bedroom Comforts",
@@ -23,17 +27,17 @@
           "num_rooms": "Number of Rooms",
           "parking": "Parking",
           "room_type": "Room Type",
-          "self_check_in": "Self Check-in",
+          "self_check_in": "Self Check-In",
           "slug": "Slug",
           "title": "Title",
-          "tv": "Television",
+          "tv": "TV",
           "washer": "Washer",
-          "wifi": "WiFi"
+          "wifi": "Wifi"
         },
         "user": {
           "email": "Your email address",
           "password": "Password",
-          "password_confirmation": "Confirm Password",
+          "password_confirmation": "Confirm password",
           "remember_me": "Remember me"
         }
       },
@@ -88,11 +92,28 @@
       "logout": "Logout",
       "register": "Register",
       "sign_in": "Sign In",
-      "sign_in_button": "Sign In",
+      "sign_in_button": "Login",
       "sign_in_description": "Sign in to your account.",
       "sign_up": "Register",
       "sign_up_button": "Register",
       "sign_up_description": "Create an account."
+    },
+    "bookings": {
+      "back": "Back to List",
+      "cancel": "Cancel Booking",
+      "cancel_confirm": "Are you sure you want to cancel the booking?",
+      "canceled": "Canceled",
+      "create": "Book",
+      "empty": "You have no bookings",
+      "end": "Check-out",
+      "guest": "guest",
+      "guests": "guests",
+      "num_guests": "Number of Guests",
+      "payment_info": "Payment Information",
+      "start": "Check-in",
+      "title": "My Bookings",
+      "total_ht": "Total (excl. VAT)",
+      "total_ttc": "Total Cost"
     },
     "date": {
       "abbr_day_names": [
@@ -75835,13 +75856,16 @@
     "nav": {
       "login": "Login",
       "logout": "Logout",
-      "register": "Register"
+      "my_bookings": "My Bookings",
+      "my_rooms": "Manage My Rooms",
+      "register": "Register",
+      "rooms": "Find a Room"
     },
     "number": {
       "currency": {
         "format": {
           "delimiter": " ",
-          "format": "%n %u",
+          "format": "%u %n",
           "precision": 2,
           "separator": ",",
           "significant": false,
@@ -75906,22 +75930,23 @@
       }
     },
     "rooms": {
-      "create": "Create",
-      "delete": "Delete Accommodation",
-      "delete_confirm": "Are you sure you want to delete this accommodation?",
+      "create": "Submit",
+      "delete": "Delete Room",
+      "delete_confirm": "Are you sure you want to delete this room?",
       "edit": "Edit",
-      "edit_form": "Edit Accommodation",
-      "empty": "No accommodations available.",
+      "edit_form": "Edit a Room",
+      "empty": "No rooms available.",
       "form_images": "Photos",
-      "form_location": "Accommodation Location",
-      "form_options": "What This Accommodation Offers",
+      "form_location": "Room Location",
+      "form_options": "Room Amenities",
       "list": "Back to List",
-      "location": "Accommodation Location",
-      "new": "Add Accommodation",
-      "new_form": "Add Accommodation",
-      "options": "What This Accommodation Offers",
+      "location": "Room Location",
+      "my": "My Rooms",
+      "new": "Add a Room",
+      "new_form": "Add a Room",
+      "options": "Room Amenities",
       "overview": "Overview",
-      "per_day": "per day",
+      "per_day": "per night",
       "room_options": {
         "bathroom_essentials": {
           "icon": "fas fa-toilet-paper",
@@ -75957,11 +75982,11 @@
         },
         "self_check_in": {
           "icon": "fas fa-key",
-          "label": "Self Check-in"
+          "label": "Self Check-In"
         },
         "tv": {
           "icon": "fas fa-tv",
-          "label": "Television"
+          "label": "TV"
         },
         "washer": {
           "icon": "fas fa-socks",
@@ -75969,14 +75994,14 @@
         },
         "wifi": {
           "icon": "fas fa-wifi",
-          "label": "WiFi"
+          "label": "Wifi"
         }
       },
       "room_types": {
         "apartment": "Apartment",
         "house": "House"
       },
-      "title": "Accommodations"
+      "title": "Rooms"
     },
     "support": {
       "array": {
@@ -75997,8 +76022,8 @@
     },
     "uploader": {
       "cancelupload": "Cancel",
-      "defaultmessage": "Drop a file here to upload",
-      "filetoobig": "File is too large ({{filesize}}mb). Maximum allowed size is {{maxFilesize}}mb",
+      "defaultmessage": "Drop a file here or click to upload",
+      "filetoobig": "File is too big ({{filesize}}mb). Maximum allowed size is {{maxFilesize}}mb",
       "invalidfiletype": "Invalid file type",
       "maxfilesexceeded": "Maximum {{maxFiles}} files allowed",
       "removefile": "Remove"

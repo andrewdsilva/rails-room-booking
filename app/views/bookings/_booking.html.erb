@@ -1,0 +1,32 @@
+<div class="col-12">
+  <%= link_to booking_path(booking, locale: @page_lang) do %>
+    <div class="card p-3 mb-3 text-dark">
+      <div class="d-flex flex-column flex-md-row">
+        <div>
+          <div class="rounded-3 bg-image bg-light p-3" style="width: 10rem; height: 10rem; background-image: url('<%= url_for(booking.room.main_image&.variant(resize_to_fit: [500, 500])) %>');"></div>
+        </div>
+
+        <div class="flex-grow-1">
+          <div class="card-body p-2 ps-md-4">
+            <div class="d-flex flex-row justify-content-between">
+              <h5 class="card-title text-primary"><%= booking.room.title %></h5>
+
+              <div class="text-primary fw-bold fs-4 text-end">
+                <div><%= currency_str(booking.total_ht) %></div>
+
+                <% if booking.canceled? %>
+                  <div class="badge bg-danger"><%= I18n.t('bookings.canceled') %></div>
+                <% end %>
+              </div>
+            </div>
+            <p class="card-text"><small><%= booking.room.location %></small></p>
+
+            <div class="fs-5">
+              <%= booking.formated_dates %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
