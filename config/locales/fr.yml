@@ -92,6 +92,7 @@ fr:
 
   rooms:
     title: "Logements"
+    my: Mes logements
     new: "Ajouter un logement"
     edit: "Modifier"
     delete: "Supprimer le logement"
@@ -164,6 +165,7 @@ fr:
     back: Retour à la liste
     cancel: Annuler la réservation
     cancel_confirm: Êtes vous sûr de vouloir annuler la réservation ?
+    canceled: Annulé
 
   forms:
     drag_and_drop_text: Faites glisser ou cliquez ici pour ajouter une image

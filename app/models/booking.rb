@@ -42,6 +42,10 @@ class Booking < ApplicationRecord
   end
 
   def total_ttc
-    self.total_ht * 1.2
+    total_ht * 1.2
+  end
+
+  def canceled?
+    canceled_at.present?
   end
 end

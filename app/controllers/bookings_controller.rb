@@ -1,6 +1,16 @@
 class BookingsController < ApplicationController
   include ::CrudConcern
 
+  def cancel
+    set_object
+
+    authorize @object
+
+    @object.update_attribute :canceled_at, Time.now
+
+    redirect_to_show(@object)
+  end
+
   private
 
   def base_class

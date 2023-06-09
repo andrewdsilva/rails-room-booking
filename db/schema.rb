@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_08_045813) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_09_044940) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -48,6 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_08_045813) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.decimal "total_ht", default: "0.0"
+    t.datetime "canceled_at"
     t.index ["room_id"], name: "index_bookings_on_room_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end

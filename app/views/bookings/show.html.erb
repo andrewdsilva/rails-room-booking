@@ -13,11 +13,17 @@
 
         <div>
           <div class="d-flex flex-row">
+            <div class="ms-2">
+              <% if @object.canceled? %>
+                <div class="badge bg-danger"><%= I18n.t('bookings.canceled') %></div>
+              <% end %>
+            </div>
+
             <%= link_to bookings_path(locale: @page_lang), class: 'btn btn-link text-primary ms-2', 'data-bs-toggle': 'tooltip', title: t('bookings.back') do %>
               <i class="fas fa-chevron-circle-left"></i>
             <% end %>
 
-            <% if policy(@object).edit? %>
+            <% if policy(@object).edit? && !@object.canceled? %>
               <%= link_to cancel_booking_path(@object, locale: @page_lang), class: 'btn btn-light text-primary ms-2', 'data-bs-toggle': 'tooltip', title: t('bookings.cancel'),
                 data: { turbo_method: :post, turbo_confirm: I18n.t('bookings.cancel_confirm') } do %>
                 <i class="fas fa-ban"></i>

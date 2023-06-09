@@ -12,7 +12,11 @@ class RoomsController < ApplicationController
   def object_class
     objects = base_class.all.with_attached_images
 
-    objects = objects.where(user_id: current_user.id) if params[:scope] == "my"
+    if params[:scope] == "my"
+      @scope = params[:scope]
+
+      objects = objects.where(user_id: current_user.id)
+    end
 
     objects
   end

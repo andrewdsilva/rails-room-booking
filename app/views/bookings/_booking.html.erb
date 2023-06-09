@@ -11,7 +11,13 @@
             <div class="d-flex flex-row justify-content-between">
               <h5 class="card-title text-primary"><%= booking.room.title %></h5>
 
-              <div class="text-primary fw-bold fs-4"><%= currency_str(booking.total_ht) %></div>
+              <div class="text-primary fw-bold fs-4 text-end">
+                <div><%= currency_str(booking.total_ht) %></div>
+
+                <% if booking.canceled? %>
+                  <div class="badge bg-danger"><%= I18n.t('bookings.canceled') %></div>
+                <% end %>
+              </div>
             </div>
             <p class="card-text"><small><%= booking.room.location %></small></p>
 
