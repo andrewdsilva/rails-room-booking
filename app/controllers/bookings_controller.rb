@@ -6,7 +6,7 @@ class BookingsController < ApplicationController
 
     authorize @object
 
-    @object.update_attribute :canceled_at, Time.now
+    @object.cancel!
 
     redirect_to_show(@object)
   end

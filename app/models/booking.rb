@@ -48,4 +48,8 @@ class Booking < ApplicationRecord
   def canceled?
     canceled_at.present?
   end
+
+  def cancel!
+    update_attribute :canceled_at, Time.now
+  end
 end
