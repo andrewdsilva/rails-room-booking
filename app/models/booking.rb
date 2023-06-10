@@ -1,5 +1,6 @@
 class Booking < ApplicationRecord
   include ::HasOwnerConcern
+  include ::HasPriceConcern
 
   belongs_to :user
   belongs_to :room
@@ -7,8 +8,6 @@ class Booking < ApplicationRecord
   validates :start_date, :end_date, :room_id, :user_id, presence: true
   validate :end_date_greater_than_start_date
   validate :dates_are_available
-
-  before_save :set_price_ht, if: :start_or_end_changed?
 
   def end_date_greater_than_start_date
     errors.add(:end_date, I18n.t("activerecord.errors.models.booking.invalid_dates")) if end_date && start_date && end_date <= start_date
@@ -22,10 +21,6 @@ class Booking < ApplicationRecord
 
   def self.default_sort
     "created_at desc"
-  end
-
-  def compute_price
-    room.day_price * (end_date - start_date).to_i
   end
 
   def start_formated
@@ -42,14 +37,6 @@ class Booking < ApplicationRecord
 
   def start_or_end_changed?
     start_date_changed? || end_date_changed?
-  end
-
-  def set_price_ht
-    self.total_ht = compute_price
-  end
-
-  def total_ttc
-    total_ht * 1.2
   end
 
   def canceled?

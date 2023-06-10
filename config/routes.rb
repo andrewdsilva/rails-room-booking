@@ -19,5 +19,7 @@ Rails.application.routes.draw do
         post "cancel"
       end
     end
+
+    resource :settings, only: ["edit", "update"]
   end
 end

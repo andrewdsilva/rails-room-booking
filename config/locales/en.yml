@@ -9,6 +9,7 @@ en:
     rooms: Find a Room
     my_rooms: Manage My Rooms
     my_bookings: My Bookings
+    settings: Settings
 
   auth:
     register: Register
@@ -91,6 +92,8 @@ en:
       booking:
         dates: Dates
         num_guests: Number of Guests
+      setting:
+        vat: Value Added Tax (VAT)
 
   rooms:
     title: "Rooms"
@@ -190,3 +193,7 @@ en:
     removefile: "Remove"
     maxfilesexceeded: "Maximum {{maxFiles}} files allowed"
     defaultmessage: "Drop a file here or click to upload"
+
+  settings:
+    title: Account settings
+    save: Save

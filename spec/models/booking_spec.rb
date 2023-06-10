@@ -13,14 +13,17 @@ RSpec.describe ::Booking, type: :model do
 
       booking = create(:booking_1, user: user, room: room, start_date: start_date, end_date: end_date)
 
-      expect(booking.compute_price).to eq(450)
+      expect(booking.compute_price_ht).to eq(450)
+      expect(booking.compute_price_ttc).to eq(450 * 1.2)
     end
   end
 
   context "When checking booking dates" do
     let!(:user)             { create(:user_1) }
     let!(:room)             { create(:room_1, user: user) }
-    let!(:existing_booking) { create(:booking_1, start_date: DateTime.new(2023, 6, 10), end_date: DateTime.new(2023, 6, 11), user_id: user.id, room_id: room.id) }
+    let!(:existing_booking) do
+      create(:booking_1, start_date: DateTime.new(2023, 6, 10), end_date: DateTime.new(2023, 6, 11), user_id: user.id, room_id: room.id)
+    end
 
     it "Should require start and end dates" do
       booking = build(:booking_1, user: user, room: room, start_date: nil, end_date: nil)

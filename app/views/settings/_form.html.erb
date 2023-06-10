@@ -1,0 +1,26 @@
+<div class="container py-5">
+  <div class="d-flex align-items-center justify-content-between mb-5">
+    <h1 class="mb-0 fw-bold"><%= t('settings.title') %></h1>
+  </div>
+
+  <div>
+    <%= form_with(model: @object, url: settings_path, method: :patch) do |form| %>
+      <% if @object.errors.any? %>
+        <div class="alert alert-danger">
+          <% @object.errors.full_messages.each do |message|%>
+            <div><%= message %></div>
+          <%end%>
+        </div>
+      <%end%>
+
+      <div class="mb-3">
+        <%= form.label :vat, class: "form-label" %>
+        <%= form.text_field :vat, class: "form-control" %>
+      </div>
+
+      <div class="text-end mt-4">
+        <%= form.submit I18n.t('settings.save'), class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>

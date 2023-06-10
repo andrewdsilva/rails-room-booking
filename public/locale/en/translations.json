@@ -34,6 +34,9 @@
           "washer": "Washer",
           "wifi": "Wifi"
         },
+        "setting": {
+          "vat": "Value Added Tax (VAT)"
+        },
         "user": {
           "email": "Your email address",
           "password": "Password",
@@ -75861,7 +75864,8 @@
       "my_bookings": "My Bookings",
       "my_rooms": "Manage My Rooms",
       "register": "Register",
-      "rooms": "Find a Room"
+      "rooms": "Find a Room",
+      "settings": "Settings"
     },
     "number": {
       "currency": {
@@ -76004,6 +76008,10 @@
         "house": "House"
       },
       "title": "Rooms"
+    },
+    "settings": {
+      "save": "Save",
+      "title": "Account settings"
     },
     "support": {
       "array": {

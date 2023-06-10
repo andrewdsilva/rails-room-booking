@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  include ::HasSettingsConcern
+
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :validatable
 

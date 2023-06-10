@@ -34,6 +34,9 @@
           "washer": "Lave-linge",
           "wifi": "Wifi"
         },
+        "setting": {
+          "vat": "Taxe sur la valeur ajoutée (TVA)"
+        },
         "user": {
           "email": "Votre adresse e-mail",
           "password": "Mot de passe",
@@ -5333,7 +5336,8 @@
       "my_bookings": "Mes réservations",
       "my_rooms": "Gérer mes logements",
       "register": "Inscription",
-      "rooms": "Trouver un logement"
+      "rooms": "Trouver un logement",
+      "settings": "Paramètres"
     },
     "number": {
       "currency": {
@@ -5435,7 +5439,7 @@
           "label": "Machine à café"
         },
         "dishwasher": {
-          "icon": "fas fa-soap",
+          "icon": "fas fa-utensils",
           "label": "Lave-vaisselle"
         },
         "dryer": {
@@ -5476,6 +5480,10 @@
         "house": "Maison"
       },
       "title": "Logements"
+    },
+    "settings": {
+      "save": "Enregistrer",
+      "title": "Paramètres du compte"
     },
     "support": {
       "array": {

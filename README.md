@@ -22,6 +22,8 @@ This project is under construction. Stay tuned for exciting updates as I continu
 
 - **Online booking**: Enable your customers to easily make reservations for your accommodations directly through the platform, streamlining the booking process for a seamless user experience.
 
+- **Account settings**: Management of your preferences (VAT rates, etc.)
+
 ## Upcoming features 🚀
 
 - **Online payment via Stripe**: Facilitate secure online payments by integrating with Stripe, a trusted payment gateway, allowing your users to make payments conveniently and securely.
@@ -39,9 +41,16 @@ This project has been developed using the following key dependencies:
 - **Rubocop**
 - **Sass**
 
+## Translations
+
+By default two languages are available, a language selector in the footer allows you to change the interface language.
+
+- French 🇹🇫
+- English 🇺🇸
+
 ## Installation
 
-To launch the application, follow these steps: 
+To launch the application, follow these steps:
 
 1. Run `bundle install`
 2. Run `rails db:create`

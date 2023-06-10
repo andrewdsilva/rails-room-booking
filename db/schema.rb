@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_09_044940) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_10_114044) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -48,6 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_09_044940) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.decimal "total_ht", default: "0.0"
+    t.decimal "total_ttc", default: "0.0"
     t.datetime "canceled_at"
     t.index ["room_id"], name: "index_bookings_on_room_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
@@ -62,7 +63,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_09_044940) do
     t.integer "num_rooms"
     t.integer "num_beds"
     t.integer "num_baths"
-    t.integer "day_price"
+    t.decimal "day_price", default: "0.0"
     t.boolean "self_check_in", default: false
     t.boolean "parking", default: false
     t.boolean "kitchen", default: false
@@ -83,6 +84,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_09_044940) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_rooms_on_user_id"
+  end
+
+  create_table "settings", force: :cascade do |t|
+    t.integer "user_id"
+    t.decimal "vat", default: "0.2"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_settings_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

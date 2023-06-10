@@ -9,6 +9,7 @@ fr:
     rooms: Trouver un logement
     my_rooms: Gérer mes logements
     my_bookings: Mes réservations
+    settings: Paramètres
 
   auth:
     register: Inscription
@@ -91,6 +92,8 @@ fr:
       booking:
         dates: Dates
         num_guests: Nombre d'invités
+      setting:
+        vat: Taxe sur la valeur ajoutée (TVA)
 
   rooms:
     title: "Logements"
@@ -128,7 +131,7 @@ fr:
         icon: "fas fa-water"
       dishwasher:
         label: "Lave-vaisselle"
-        icon: "fas fa-soap"
+        icon: "fas fa-utensils"
       wifi:
         label: "Wifi"
         icon: "fas fa-wifi"
@@ -190,3 +193,7 @@ fr:
     removefile: "Supprimer"
     maxfilesexceeded: "Maximum {{maxFiles}} fichiers autorisés"
     defaultmessage: "Déposer un fichier ici pour le télécharger"
+
+  settings:
+    title: Paramètres du compte
+    save: Enregistrer

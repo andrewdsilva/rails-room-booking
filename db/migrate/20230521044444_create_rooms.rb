@@ -12,7 +12,7 @@ class CreateRooms < ActiveRecord::Migration[7.0]
       t.integer :num_beds
       t.integer :num_baths
 
-      t.integer :day_price
+      t.decimal :day_price, default: 0.0
 
       t.boolean :self_check_in, default: false
       t.boolean :parking, default: false
