@@ -59,6 +59,9 @@ export default class extends Controller {
 
       this.startInput.value = this.startDate.format(this.outputFormat);
       this.endInput.value = this.endDate.format(this.outputFormat);
+    } else {
+      this.startDate = dayjs(this.startInput.value);
+      this.endDate = dayjs(this.endInput.value);
     }
   }
 
@@ -71,11 +74,9 @@ export default class extends Controller {
     let dates = this.data.get("bookedDates");
 
     return (dates ? JSON.parse(dates) : []).map(d => {
-      if (Array.isArray(d)) {
-        const start = new Date(d[0]);
-        const end = new Date(d[1]);
-        return [start, end];
-      }
+      const start = new Date(d[0]);
+      const end = new Date(d[1]);
+      return [start, end];
     });
   }
 

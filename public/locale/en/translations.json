@@ -58,7 +58,9 @@
               "start_date": {
                 "blank": "can't be blank"
               }
-            }
+            },
+            "invalid_dates": "must be greater than start date",
+            "unavailable_dates": "The dates selected are not available."
           },
           "user": {
             "attributes": {
