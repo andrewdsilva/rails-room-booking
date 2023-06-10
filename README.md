@@ -45,7 +45,7 @@ This project has been developed using the following key dependencies:
 
 By default two languages are available, a language selector in the footer allows you to change the interface language.
 
-- French 🇹🇫
+- French 🇫🇷
 - English 🇺🇸
 
 ## Installation
