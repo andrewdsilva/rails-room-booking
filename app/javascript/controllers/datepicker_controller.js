@@ -68,13 +68,14 @@ export default class extends Controller {
   }
 
   get bookedDates() {
-    return (this.data.get("bookedDates") || []).map(d => {
+    let dates = this.data.get("bookedDates");
+
+    return (dates ? JSON.parse(dates) : []).map(d => {
       if (Array.isArray(d)) {
-        const start = new DateTime(d[0], this.outputFormat);
-        const end = new DateTime(d[1], this.outputFormat);
+        const start = new Date(d[0]);
+        const end = new Date(d[1]);
         return [start, end];
       }
-      return new DateTime(d, this.outputFormat);
     });
   }
 

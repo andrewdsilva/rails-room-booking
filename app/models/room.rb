@@ -31,4 +31,10 @@ class Room < ApplicationRecord
   def other_images
     images.drop(1)
   end
+
+  def booked_dates
+    bookings.where("end_date >= ?", Date.today)
+    .pluck(:start_date, :end_date)
+    .map { |start_date, end_date| [start_date.strftime("%Y-%m-%d"), end_date.strftime("%Y-%m-%d")] }
+  end
 end
