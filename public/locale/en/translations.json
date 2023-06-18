@@ -75935,6 +75935,14 @@
         }
       }
     },
+    "payments": {
+      "already_paid": "Payment has already been completed.",
+      "complete": {
+        "paid": "Successful payment!",
+        "pending": "Payment pending."
+      },
+      "submit": "Submit"
+    },
     "rooms": {
       "create": "Submit",
       "delete": "Delete Room",

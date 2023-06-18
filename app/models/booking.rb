@@ -1,4 +1,6 @@
 class Booking < ApplicationRecord
+  include ::Payify::HasPaymentConcern
+
   include ::HasOwnerConcern
   include ::HasPriceConcern
 
@@ -45,5 +47,9 @@ class Booking < ApplicationRecord
 
   def cancel!
     update_attribute :canceled_at, Time.now
+  end
+
+  def ammount_to_pay
+    total_ttc
   end
 end
