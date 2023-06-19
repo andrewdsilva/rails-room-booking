@@ -21,5 +21,7 @@ Rails.application.routes.draw do
     end
 
     resource :settings, only: ["edit", "update"]
+
+    mount ::Payify::Engine => ""
   end
 end

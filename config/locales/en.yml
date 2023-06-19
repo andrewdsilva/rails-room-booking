@@ -164,13 +164,17 @@ en:
     num_guests: Number of Guests
     guest: guest
     guests: guests
-    payment_info: Payment Information
+    payment_info: Payment information
+    payment_form: Payment form
     total_ht: Total (excl. VAT)
     total_ttc: Total Cost
     back: Back to List
     cancel: Cancel Booking
     cancel_confirm: Are you sure you want to cancel the booking?
     canceled: Canceled
+    payment_pending: Payment pending
+    paid: Paid
+    payment_status: Payment status
 
   forms:
     drag_and_drop_text: Drag and drop or click here to add an image
