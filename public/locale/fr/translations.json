@@ -105,6 +105,7 @@
     },
     "bookings": {
       "back": "Retour à la liste",
+      "back_to_show": "Retour à la réservation",
       "cancel": "Annuler la réservation",
       "cancel_confirm": "Êtes vous sûr de vouloir annuler la réservation ?",
       "canceled": "Annulé",
@@ -114,7 +115,11 @@
       "guest": "personne",
       "guests": "personnes",
       "num_guests": "Nombre de personnes",
+      "paid": "Payé",
+      "payment_form": "Formulaire de paiement",
       "payment_info": "Informations de paiement",
+      "payment_pending": "Paiement en attente",
+      "payment_status": "Statut de paiement",
       "start": "Arrivée",
       "title": "Mes réservations",
       "total_ht": "Prix HT",
@@ -5406,6 +5411,14 @@
           "delimiter": ""
         }
       }
+    },
+    "payments": {
+      "already_paid": "Le paiement a déjà été effectué.",
+      "complete": {
+        "paid": "Paiement réussi !",
+        "pending": "Paiement en attente."
+      },
+      "submit": "Payer"
     },
     "rooms": {
       "create": "Valider",

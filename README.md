@@ -10,10 +10,6 @@ Open-source solution for hotel and vacation rental management, offering online r
 
 ___
 
-## Status 🚧
-
-This project is under construction. Stay tuned for exciting updates as I continue to shape it.
-
 ## Features ✅
 
 - **Sign up / Log in**: Simply create an account or log in to access the platform.
@@ -24,9 +20,9 @@ This project is under construction. Stay tuned for exciting updates as I continu
 
 - **Account settings**: Management of your preferences (VAT rates, etc.)
 
-## Upcoming features 🚀
-
 - **Online payment via Stripe**: Facilitate secure online payments by integrating with Stripe, a trusted payment gateway, allowing your users to make payments conveniently and securely.
+
+## Upcoming features 🚀
 
 - **Synchronization of availability with Airbnb**: Automatically synchronize the availability of your accommodations with Airbnb, ensuring consistent and up-to-date availability across platforms, saving you time and effort in managing multiple calendars.
 
@@ -40,6 +36,22 @@ This project has been developed using the following key dependencies:
 - **Rspec**
 - **Rubocop**
 - **Sass**
+- **Payify**
+- **Stripe**
+
+## Online payment
+
+To use online payment for bookings, you need to have a Stripe account.
+
+You can set your Stripe API credentials and define currency using environment variables. (Secret key, Publishable key)
+
+```ruby
+# .env
+STRIPE_API_KEY="..."
+STRIPE_PUBLISHABLE_KEY="..."
+```
+
+![Screenshot](./app/assets/images/screenshot-payment.png)
 
 ## Translations
 

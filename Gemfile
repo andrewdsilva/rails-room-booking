@@ -95,3 +95,6 @@ gem "slug"
 gem "i18n-js"
 gem "listen"
 gem "rails-i18n"
+
+gem "dotenv-rails", "~> 2.8.1"
+gem "payify", "~> 0.1"

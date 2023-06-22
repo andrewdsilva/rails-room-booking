@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_10_114044) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_18_133901) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -52,6 +52,20 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_10_114044) do
     t.datetime "canceled_at"
     t.index ["room_id"], name: "index_bookings_on_room_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "payify_payments", force: :cascade do |t|
+    t.decimal "amount", precision: 10, scale: 2, null: false
+    t.integer "status", default: 0, null: false
+    t.integer "payment_method"
+    t.string "transaction_id"
+    t.datetime "paid_at"
+    t.string "model_type"
+    t.integer "model_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "stripe_payment_inent_id"
+    t.string "stripe_client_secret"
   end
 
   create_table "rooms", force: :cascade do |t|

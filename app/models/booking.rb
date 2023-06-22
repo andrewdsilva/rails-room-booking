@@ -1,6 +1,10 @@
 class Booking < ApplicationRecord
+  include ::Payify::HasPaymentConcern
+
   include ::HasOwnerConcern
   include ::HasPriceConcern
+
+  after_save :create_payment
 
   belongs_to :user
   belongs_to :room
@@ -43,7 +47,19 @@ class Booking < ApplicationRecord
     canceled_at.present?
   end
 
+  def payment_pending?
+    !canceled? && payment&.status == "pending"
+  end
+
+  def paid?
+    payment&.paid?
+  end
+
   def cancel!
     update_attribute :canceled_at, Time.now
+  end
+
+  def amount_to_pay
+    total_ttc
   end
 end

@@ -17,6 +17,14 @@
                 <% if booking.canceled? %>
                   <div class="badge bg-danger"><%= I18n.t('bookings.canceled') %></div>
                 <% end %>
+
+                <% if booking.payment_pending? %>
+                  <div class="badge bg-warning"><%= I18n.t('bookings.payment_pending') %></div>
+                <% end %>
+
+                <% if booking.paid? %>
+                  <div class="badge bg-success"><%= I18n.t('bookings.paid') %></div>
+                <% end %>
               </div>
             </div>
             <p class="card-text"><small><%= booking.room.location %></small></p>

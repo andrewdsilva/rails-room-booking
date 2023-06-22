@@ -33,8 +33,12 @@
         </div>
       </div>
 
-      <div class="d-flex flex-row mb-4">
-        <%= render "rooms/numbers", room: @object.room %>
+      <div class="d-flex justify-content-between mb-4">
+        <div class="d-flex flex-row">
+          <%= render "rooms/numbers", room: @object.room %>
+        </div>
+        <div class="text-right">
+        </div>
       </div>
 
       <div class="row mb-3">
@@ -64,6 +68,24 @@
         <div class="fw-bold"><%= I18n.t('bookings.total_ttc') %></div>
         <div><%= currency_str(@object.total_ttc) %></div>
       </div>
+
+      <div class="mb-3">
+        <div class="fw-bold"><%= I18n.t('bookings.payment_status') %></div>
+        <div>
+          <% if @object.payment_pending? %>
+            <div class="badge bg-warning"><%= I18n.t('bookings.payment_pending') %></div>
+          <% end %>
+          <% if @object.paid? %>
+            <div class="badge bg-success"><%= I18n.t('bookings.paid') %></div>
+          <% end %>
+        </div>
+      </div>
+
+      <% unless @object.paid? || @object.payment.nil? %>
+        <legend class="mt-4 mb-3 fw-bold text-normal"><%= I18n.t('bookings.payment_form') %></legend>
+
+        <%= render "payify/payments/form", payment: @object.payment %>
+      <% end %>
     </div>
   </div>
 </div>
