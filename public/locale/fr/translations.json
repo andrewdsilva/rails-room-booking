@@ -5411,6 +5411,14 @@
         }
       }
     },
+    "payments": {
+      "already_paid": "Le paiement a déjà été effectué.",
+      "complete": {
+        "paid": "Paiement réussi !",
+        "pending": "Paiement en attente."
+      },
+      "submit": "Payer"
+    },
     "rooms": {
       "create": "Valider",
       "delete": "Supprimer le logement",

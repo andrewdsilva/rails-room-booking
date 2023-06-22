@@ -1,0 +1,9 @@
+<% if @payment.paid? %>
+  <div class="alert alert-success" role="alert">
+    <%= I18n.t("payments.complete.paid") %>
+  </div>
+<% else %>
+  <div class="alert alert-danger" role="alert">
+    <%= I18n.t("payments.complete.pending") %>
+  </div>
+<% end %>

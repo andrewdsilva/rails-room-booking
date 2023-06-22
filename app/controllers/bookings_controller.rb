@@ -1,6 +1,8 @@
 class BookingsController < ApplicationController
   include ::CrudConcern
 
+  before_action :stripe_init_intent, only: [:show]
+
   def cancel
     set_object
 
@@ -35,5 +37,11 @@ class BookingsController < ApplicationController
 
   def use_slug?
     false
+  end
+
+  def stripe_init_intent
+    if @object.payment_pending?
+      @object.payment.stripe_init_intent
+    end
   end
 end

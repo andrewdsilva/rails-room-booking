@@ -201,3 +201,10 @@ fr:
   settings:
     title: Paramètres du compte
     save: Enregistrer
+
+  payments:
+    submit: Payer
+    already_paid: Le paiement a déjà été effectué.
+    complete:
+      pending: Paiement en attente.
+      paid: Paiement réussi !

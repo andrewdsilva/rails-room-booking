@@ -97,4 +97,4 @@ gem "listen"
 gem "rails-i18n"
 
 gem "dotenv-rails", "~> 2.8.1"
-gem "payify", "~> 0.1.0"
+gem "payify", "~> 0.1"
