@@ -175,6 +175,7 @@ en:
     payment_pending: Payment pending
     paid: Paid
     payment_status: Payment status
+    back_to_show: Back to booking
 
   forms:
     drag_and_drop_text: Drag and drop or click here to add an image

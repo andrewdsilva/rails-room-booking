@@ -1,9 +1,26 @@
-<% if @payment.paid? %>
-  <div class="alert alert-success" role="alert">
-    <%= I18n.t("payments.complete.paid") %>
+<div class="container py-5">
+  <div class="d-flex flex-row justify-content-between mb-5">
+    <div>
+      <h1><%= @booking.room.title %></h1>
+      <p><%= @booking.room.location %></p>
+    </div>
+
+    <div>
+      <div class="d-flex flex-row">
+        <%= link_to booking_path(locale: @page_lang, id: @booking.id), class: 'btn btn-link text-primary ms-2', 'data-bs-toggle': 'tooltip', title: t('bookings.back_to_show') do %>
+          <i class="fas fa-chevron-circle-left"></i>
+        <% end %>
+      </div>
+    </div>
   </div>
-<% else %>
-  <div class="alert alert-danger" role="alert">
-    <%= I18n.t("payments.complete.pending") %>
-  </div>
-<% end %>
+
+  <% if @payment.paid? %>
+    <div class="alert alert-success" role="alert">
+      <%= I18n.t("payments.complete.paid") %>
+    </div>
+  <% else %>
+    <div class="alert alert-danger" role="alert">
+      <%= I18n.t("payments.complete.pending") %>
+    </div>
+  <% end %>
+</div>

@@ -105,6 +105,7 @@
     },
     "bookings": {
       "back": "Retour à la liste",
+      "back_to_show": "Retour à la réservation",
       "cancel": "Annuler la réservation",
       "cancel_confirm": "Êtes vous sûr de vouloir annuler la réservation ?",
       "canceled": "Annulé",

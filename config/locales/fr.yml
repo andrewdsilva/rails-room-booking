@@ -175,6 +175,7 @@ fr:
     payment_pending: Paiement en attente
     paid: Payé
     payment_status: Statut de paiement
+    back_to_show: Retour à la réservation
 
   forms:
     drag_and_drop_text: Faites glisser ou cliquez ici pour ajouter une image
