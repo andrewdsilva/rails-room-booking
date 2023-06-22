@@ -184,7 +184,7 @@ GEM
     nokogiri (1.15.2-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
-    payify (0.1.15)
+    payify (0.1.16)
       dotenv-rails (~> 2.8.1)
       money (~> 6.16)
       rails (~> 7.0)

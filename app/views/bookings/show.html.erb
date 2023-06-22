@@ -83,9 +83,9 @@
 
       <% unless @object.paid? || @object.payment.nil? %>
         <legend class="mt-4 mb-3 fw-bold text-normal"><%= I18n.t('bookings.payment_form') %></legend>
-      <% end %>
 
-      <%= render "payify/payments/form", payment: @object.payment %>
+        <%= render "payify/payments/form", payment: @object.payment %>
+      <% end %>
     </div>
   </div>
 </div>

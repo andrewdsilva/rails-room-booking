@@ -23,5 +23,5 @@ Rails.application.routes.draw do
     resource :settings, only: ["edit", "update"]
   end
 
-  mount ::Payify::Engine, at: "/payify"
+  mount Payify::Engine => '/payify', as: 'payify'
 end
