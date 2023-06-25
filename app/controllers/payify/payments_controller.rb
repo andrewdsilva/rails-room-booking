@@ -9,6 +9,5 @@ module Payify
     def set_booking
       @booking = @payment.model
     end
-
   end
 end

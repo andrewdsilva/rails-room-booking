@@ -40,8 +40,8 @@ class BookingsController < ApplicationController
   end
 
   def stripe_init_intent
-    if @object.payment_pending?
-      @object.payment.stripe_init_intent
-    end
+    return unless @object.payment_pending?
+
+    @object.payment.stripe_init_intent
   end
 end
