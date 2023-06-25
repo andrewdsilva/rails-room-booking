@@ -5,6 +5,7 @@ class Booking < ApplicationRecord
   include ::HasPriceConcern
 
   after_save :create_payment
+  after_create :notify_booking
 
   belongs_to :user
   belongs_to :room
@@ -61,5 +62,11 @@ class Booking < ApplicationRecord
 
   def amount_to_pay
     total_ttc
+  end
+
+  def notify_booking
+    return unless Integromat.config.web_hooks.key?(:booking)
+
+    Integromat::Webhook.new(:booking).trigger(start: start_date, end: end_date, guests: num_guests, room: room.title, user: user.email, total_ht: total_ht)
   end
 end

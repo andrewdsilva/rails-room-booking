@@ -22,6 +22,8 @@ ___
 
 - **Online payment via Stripe**: Facilitate secure online payments by integrating with Stripe, a trusted payment gateway, allowing your users to make payments conveniently and securely.
 
+- **Webhook Integration with Integromat (Make)**: Connect your booking system with Integromat to initiate automated workflows, such as sending booking notifications, updating external databases, or integrating with other applications for further automation and data handling.
+
 ## Upcoming features 🚀
 
 - **Synchronization of availability with Airbnb**: Automatically synchronize the availability of your accommodations with Airbnb, ensuring consistent and up-to-date availability across platforms, saving you time and effort in managing multiple calendars.
@@ -52,6 +54,29 @@ STRIPE_PUBLISHABLE_KEY="..."
 ```
 
 ![Screenshot](./app/assets/images/screenshot-payment.png)
+
+## Integromat Webhook (Make)
+
+[https://www.make.com/en](Integromat) is a powerful automation platform that allows you to connect various apps and services, enabling you to automate workflows and streamline your business processes. By integrating Integromat with your booking system, you can enhance the functionality and efficiency of your booking process.
+
+To set up the Integromat integration and receive a webhook for each reservation made, follow these steps:
+
+1. Sign up for an account on [Integromat](https://www.make.com/) if you don't have one already.
+
+2. Create a new scenario in Integromat to define the actions you want to perform when a booking is made.
+
+3. In your Rails project, add the following environment variables to your configuration:
+
+   ```ruby
+   INTEGROMAT_BASE_URI="https://hook.eu2.make.com"
+   INTEGROMAT_BOOKING_HOOK="odsdispsdsbseb1hrjqe56jqm35snc"
+   ```
+
+   Replace the values above with your own Integromat base URI and booking hook.
+
+4. Whenever a booking is made in your booking system, a webhook will be triggered and sent to the specified Integromat hook. You can then use this webhook to automate processes in your Integromat scenario, such as sending notifications, updating external systems, or performing any custom actions you require.
+
+![Booking System hook with Make](./app/assets/images/screenshot-make.png)
 
 ## Translations
 
