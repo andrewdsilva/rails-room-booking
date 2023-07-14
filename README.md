@@ -142,7 +142,7 @@ docker-compose run app rails db:seed
 
 7. Finally, the Rails server should be running inside the Docker container. You can access the application by opening your browser and navigating to http://localhost:3000.
 
-> Note: If you're running Docker on Linux, you may need to replace localhost with your machine's IP address, which you can find using the ifconfig or ip addr show command.
+> Note: If you're running Docker on Linux, you may need to replace localhost with your machine's IP address, which you can find using the `ifconfig` or `ip addr show` command.
 
 ## Tests
 
