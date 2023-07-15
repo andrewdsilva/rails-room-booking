@@ -108,19 +108,26 @@ If you prefer to run the project using Docker, follow these steps:
 
 1. Make sure you have Docker and docker-compose installed on your system. You can download and install Docker from the official website: https://www.docker.com/get-started
 
-2. Build the Docker container by running the following command in the project's root directory:
+2. Set the host of you environment file to `db`:
+
+```shell
+# .env
+DB_HOST=db
+```
+
+3. Build the Docker container by running the following command in the project's root directory:
 
 ```shell
 docker-compose build
 ```
 
-3. Once the build is complete, start the Docker container using the following command:
+4. Once the build is complete, start the Docker container using the following command:
 
 ```shell
 docker-compose up
 ```
 
-4. Docker will start building and running the container based on the configuration provided in the docker-compose.yml file.
+5. Docker will start building and running the container based on the configuration provided in the docker-compose.yml file.
 
 After the container is up and running, you need to set up the application's database. In a separate terminal, run the following commands:
 
@@ -130,7 +137,7 @@ docker-compose run app rails db:migrate
 docker-compose run app rails db:seed
 ```
 
-7. Finally, the Rails server should be running inside the Docker container. You can access the application by opening your browser and navigating to http://localhost:3000.
+6. Finally, the Rails server should be running inside the Docker container. You can access the application by opening your browser and navigating to http://localhost:3000.
 
 ## Tests
 

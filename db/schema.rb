@@ -11,6 +11,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_06_18_133901) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -43,8 +46,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_18_133901) do
     t.date "start_date"
     t.date "end_date"
     t.integer "num_guests"
-    t.integer "room_id"
-    t.integer "user_id"
+    t.bigint "room_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.decimal "total_ht", default: "0.0"
@@ -94,14 +97,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_18_133901) do
     t.float "lat"
     t.float "long"
     t.text "location_description"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_rooms_on_user_id"
   end
 
   create_table "settings", force: :cascade do |t|
-    t.integer "user_id"
+    t.bigint "user_id"
     t.decimal "vat", default: "0.2"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
