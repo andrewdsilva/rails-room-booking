@@ -2,7 +2,9 @@ FROM ruby:2.7.5
 
 WORKDIR /app
 
-RUN apt-get update -qq && apt-get install -y nodejs
+RUN apt-get update -qq && apt-get install -y \
+    nodejs \
+    libvips
 
 COPY Gemfile* ./
 RUN gem install bundler && bundle install --jobs 4 --retry 3
